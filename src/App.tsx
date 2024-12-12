@@ -14,6 +14,8 @@ import Investment from "./pages/Investment";
 import Business from "./pages/Business";
 import Strategy from "./pages/Strategy";
 import Download from "./pages/Download";
+import Anesa from "./pages/Anesa";
+import Kolibri from "./pages/Kolibri";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/business" element={<Business />} />
             <Route path="/strategy" element={<Strategy />} />
             <Route path="/download" element={<Download />} />
+            <Route path="/anesa" element={<Anesa />} />
+            <Route path="/kolibri" element={<Kolibri />} />
           </Routes>
         </Layout>
       </BrowserRouter>

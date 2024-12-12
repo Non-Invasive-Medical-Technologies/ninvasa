@@ -21,12 +21,29 @@ const Navigation = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/portfolio", label: "Product Portfolio" },
+    { 
+      href: "/anesa", 
+      label: "ANESA Platform",
+      parent: "/portfolio"
+    },
+    { 
+      href: "/kolibri", 
+      label: "KOLIBRI System",
+      parent: "/portfolio"
+    },
     { href: "/technology", label: "Technology" },
     { href: "/investment", label: "Investment" },
     { href: "/business", label: "Business Overview" },
     { href: "/strategy", label: "Strategy" },
     { href: "/download", label: "Business Plan" },
   ];
+
+  const isActive = (link) => {
+    if (link.parent) {
+      return location.pathname === link.href || location.pathname === link.parent;
+    }
+    return location.pathname === link.href;
+  };
 
   return (
     <nav
@@ -48,13 +65,13 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-6">
-            {navLinks.map((link) => (
+            {navLinks.filter(link => !link.parent).map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
                   "nav-link",
-                  location.pathname === link.href
+                  isActive(link)
                     ? "text-medical-600"
                     : ""
                 )}
@@ -88,7 +105,8 @@ const Navigation = () => {
                   to={link.href}
                   className={cn(
                     "block rounded-md px-3 py-2 text-base font-medium transition-colors",
-                    location.pathname === link.href
+                    link.parent ? "pl-6" : "",
+                    isActive(link)
                       ? "bg-medical-50 text-medical-600"
                       : "text-gray-700 hover:bg-medical-50 hover:text-medical-600"
                   )}
