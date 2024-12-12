@@ -10,10 +10,10 @@ const AboutHero = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-medical-800 mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-medical-800 mb-6">
             About Us / Our Mission
           </h1>
-          <h2 className="text-xl md:text-2xl font-semibold text-medical-600 mb-8">
+          <h2 className="text-lg md:text-xl font-semibold text-medical-600 mb-8">
             Pioneering the Future of Healthcare with Non-Invasive Diagnostics
           </h2>
           <div className="w-24 h-1 bg-medical-500 mx-auto rounded-full"></div>

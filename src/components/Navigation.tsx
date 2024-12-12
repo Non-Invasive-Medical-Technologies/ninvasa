@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, PlusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navigation = () => {
@@ -58,9 +58,10 @@ const Navigation = () => {
         <div className="flex h-16 items-center justify-between">
           <Link
             to="/"
-            className="text-xl font-semibold text-medical-800"
+            className="flex items-center space-x-2 text-xl font-semibold text-medical-800"
           >
-            BioPromin
+            <PlusCircle className="h-6 w-6 text-medical-600" />
+            <span className="font-sans tracking-tight">BL+MME</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +71,7 @@ const Navigation = () => {
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "nav-link",
+                  "nav-link text-sm",
                   isActive(link)
                     ? "text-medical-600"
                     : ""
@@ -104,7 +105,7 @@ const Navigation = () => {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "block rounded-md px-3 py-2 text-base font-medium transition-colors",
+                    "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
                     link.parent ? "pl-6" : "",
                     isActive(link)
                       ? "bg-medical-50 text-medical-600"
