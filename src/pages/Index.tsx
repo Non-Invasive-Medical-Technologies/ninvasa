@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Activity, Shield, Target } from "lucide-react";
+import { ArrowRight, Activity, Shield, Target, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -58,8 +58,7 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Features Section */}
+      
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -108,7 +107,63 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-medical-900 mb-4">
+              Testimonials & Case Studies
+            </h2>
+            <p className="text-lg text-medical-600">
+              Endorsed by Medical Professionals Worldwide
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-medical-50 p-8 rounded-xl relative"
+            >
+              <Quote className="absolute text-medical-200 h-12 w-12 -top-6 -left-6" />
+              <p className="text-medical-700 text-lg italic mb-4">
+                "ANESA has revolutionized our diagnostic approach. Its rapid results enable us to swiftly assess patients' conditions and take appropriate actions in emergency settings."
+              </p>
+              <div className="text-medical-900 font-semibold">
+                Dr. Oleksandr Tkachenko
+              </div>
+              <div className="text-medical-600 text-sm">
+                Head Physician, Kyiv, Ukraine
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-medical-50 p-8 rounded-xl relative"
+            >
+              <Quote className="absolute text-medical-200 h-12 w-12 -top-6 -left-6" />
+              <p className="text-medical-700 text-lg italic mb-4">
+                "We employ ANESA for preventive screenings in our clinic, and it has significantly improved our ability to detect early signs of cardiovascular diseases and other conditions. Its AI-driven analysis is truly groundbreaking."
+              </p>
+              <div className="text-medical-900 font-semibold">
+                Prof. Serhii Polivoda
+              </div>
+              <div className="text-medical-600 text-sm">
+                National Academy of Sciences, Ukraine
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-medical-900">
         <div className="container mx-auto px-4">
           <motion.div

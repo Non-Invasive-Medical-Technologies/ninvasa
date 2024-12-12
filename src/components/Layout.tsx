@@ -1,12 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Navigation from "./Navigation";
-import { useLocation } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout = () => {
   const location = useLocation();
 
   return (
@@ -21,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
           transition={{ duration: 0.3 }}
           className="pt-16"
         >
-          {children}
+          <Outlet />
         </motion.main>
       </AnimatePresence>
     </div>
