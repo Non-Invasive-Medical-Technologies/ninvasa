@@ -7,7 +7,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-medical-50 to-medical-100/50 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-medical-800 to-medical-700/90 z-0" />
         <div className="container mx-auto px-4 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -15,25 +15,46 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-1 mb-4 text-medical-600 bg-medical-50 rounded-full text-sm font-medium">
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="inline-block px-4 py-1 mb-4 text-medical-50 bg-medical-600/20 rounded-full text-sm font-medium"
+            >
               Advancing Healthcare in MENA
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-medical-900 mb-6">
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-4xl md:text-6xl font-bold text-white mb-6"
+            >
               Non-Invasive Medical
               <br />
               Technologies
-            </h1>
-            <p className="text-lg md:text-xl text-medical-600 max-w-2xl mx-auto mb-8">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="text-lg md:text-xl text-medical-50 max-w-2xl mx-auto mb-8"
+            >
               Partnering with BioPromin to revolutionize healthcare diagnostics
               across the Middle East through innovative non-invasive solutions.
-            </p>
-            <Link
-              to="/investment"
-              className="inline-flex items-center px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
             >
-              Investment Opportunity
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+              <Link
+                to="/investment"
+                className="inline-flex items-center px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+              >
+                Investment Opportunity
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
