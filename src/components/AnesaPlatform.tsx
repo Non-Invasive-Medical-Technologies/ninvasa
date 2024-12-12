@@ -79,28 +79,28 @@ const AnesaPlatform = () => {
     <div className="w-full space-y-8">
       <div className="bg-white p-8 rounded-lg shadow-lg">
         {/* Header Section */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="space-y-2">
-            <div className="flex items-center space-x-4">
-              <div className="h-8">
+        <div className="flex items-center justify-between mb-6">
+          <div className="space-y-1">
+            <div className="flex items-center space-x-3">
+              <div className="h-7">
                 <svg viewBox="0 0 500 100" className="h-full w-auto">
-                  <text x="10" y="80" fontFamily="Arial" fontSize="100" fontWeight="bold" letterSpacing="2" fill="#3b82f6">ANESA</text>
+                  <text x="10" y="80" fontFamily="Arial" fontSize="90" fontWeight="bold" letterSpacing="2" fill="#14b8a6">ANESA</text>
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-blue-600">Advanced Diagnostics</h2>
+              <h2 className="text-xl font-bold text-teal-600">Advanced Diagnostics</h2>
             </div>
-            <p className="text-gray-600 text-sm italic">
+            <p className="text-gray-500 text-xs">
               Automated Non-Invasive Express Screening Analyser
             </p>
           </div>
-          <div className="flex space-x-4">
+          <div className="flex space-x-3">
             {['overview', 'parameters', 'analytics'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors
                   ${activeTab === tab 
-                    ? 'bg-blue-100 text-blue-600' 
+                    ? 'bg-teal-100 text-teal-600' 
                     : 'text-gray-600 hover:bg-gray-100'}`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
