@@ -11,6 +11,7 @@ import Business from "./pages/Business";
 import Investment from "./pages/Investment";
 import Strategy from "./pages/Strategy";
 import Download from "./pages/Download";
+import BioPromin from "./components/about/BioPromin";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Index />} />
         <Route path="about" element={<About />} />
+        <Route path="about/biopromin" element={<BioPromin />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="anesa" element={<Anesa />} />
         <Route path="kolibri" element={<Kolibri />} />

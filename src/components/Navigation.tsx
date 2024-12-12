@@ -31,7 +31,6 @@ const Navigation = () => {
 
   const mainLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -74,6 +73,23 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
+
+              {/* About Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="nav-link">
+                    About <ChevronDown className="ml-1 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>
+                    <Link to="/about" className="w-full">About Us</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link to="/about/biopromin" className="w-full">BioPromin</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               {/* Portfolio Dropdown */}
               <DropdownMenu>
@@ -150,6 +166,23 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
+              <div className="space-y-1">
+                <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase">
+                  About
+                </div>
+                <Link
+                  to="/about"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
+                >
+                  About Us
+                </Link>
+                <Link
+                  to="/about/biopromin"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
+                >
+                  BioPromin
+                </Link>
+              </div>
               {Object.entries(menuGroups).map(([category, items]) => (
                 <div key={category} className="space-y-1">
                   <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase">
