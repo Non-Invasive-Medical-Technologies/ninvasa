@@ -47,7 +47,7 @@ const Navigation = () => {
                 className="h-8 w-auto mr-2"
               />
               <span className="text-xl font-semibold text-medical-800">
-                Non-Invasive Medical
+                BL<span className="text-medical-600">+</span>MME
               </span>
             </Link>
 
