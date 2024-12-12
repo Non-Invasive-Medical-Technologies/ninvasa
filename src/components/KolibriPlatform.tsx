@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  Heart, 
-  Activity, 
-  Brain, 
-  Clock, 
-  Shield, 
-  Cloud, 
-  ChevronDown,
-  ChevronRight,
-  Users
-} from 'lucide-react';
+import KolibriHeader from './kolibri/KolibriHeader';
+import KolibriMetrics from './kolibri/KolibriMetrics';
+import KolibriOverview from './kolibri/KolibriOverview';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import { 
   LineChart, 
   Line, 
@@ -93,140 +86,17 @@ const KolibriPlatform = () => {
     ]
   };
 
-  const metrics = [
-    { icon: Clock, label: 'Analysis Time', value: '2-5 min', trend: '+15%' },
-    { icon: Activity, label: 'Parameters', value: '40+', trend: '+8%' },
-    { icon: Users, label: 'Active Users', value: '5,000+', trend: '+25%' },
-    { icon: Shield, label: 'Accuracy', value: '99.9%', trend: '+2%' }
-  ];
-
-  const features = [
-    {
-      icon: Brain,
-      title: 'AI-Powered Analysis',
-      description: 'Deep learning algorithms for accurate health assessment'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud Integration',
-      description: 'Real-time remote monitoring and data synchronization'
-    },
-    {
-      icon: Shield,
-      title: 'Clinical Validation',
-      description: 'Extensively tested and validated through clinical trials'
-    },
-    {
-      icon: Activity,
-      title: 'Comprehensive Monitoring',
-      description: '40+ health parameters tracked in real-time'
-    }
-  ];
-
   const toggleCategory = (category) => {
     setExpandedCategory(expandedCategory === category ? null : category);
   };
 
   return (
     <div className="w-full space-y-8">
-      {/* Platform Overview */}
       <div className="bg-white p-8 rounded-lg shadow-lg">
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12">
-              <svg viewBox="0 0 500 150" className="w-full h-full">
-                <g>
-                  <circle cx="75" cy="75" r="70" fill="none" stroke="#14b8a6" strokeWidth="5"/>
-                  <path d="M75 25 L60 65 L90 65 Z M60 65 L75 105 L90 65 Z" fill="#14b8a6"/>
-                </g>
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-teal-500">KOLIBRI Health Platform</h2>
-          </div>
-          <div className="flex space-x-4">
-            {['overview', 'parameters', 'analytics'].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
-                  ${activeTab === tab 
-                    ? 'bg-blue-100 text-blue-600' 
-                    : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
-          </div>
-        </div>
+        <KolibriHeader activeTab={activeTab} setActiveTab={setActiveTab} />
+        <KolibriMetrics />
 
-        {/* Key Metrics */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
-          {metrics.map((metric, index) => (
-            <div key={index} className="bg-blue-50 p-4 rounded-lg">
-              <div className="flex items-center justify-between mb-2">
-                <metric.icon className="w-6 h-6 text-blue-600" />
-                <span className={`text-sm ${
-                  metric.trend.startsWith('+') ? 'text-green-500' : 'text-red-500'
-                }`}>
-                  {metric.trend}
-                </span>
-              </div>
-              <div className="text-2xl font-bold text-gray-900">{metric.value}</div>
-              <div className="text-sm text-gray-600">{metric.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {activeTab === 'overview' && (
-          <div className="grid grid-cols-2 gap-8">
-            {/* Features Grid */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-gray-900">Key Features</h3>
-              <div className="grid grid-cols-1 gap-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-start p-4 bg-white border border-blue-100 rounded-lg">
-                    <feature.icon className="w-6 h-6 text-blue-600 mr-4 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                      <p className="text-sm text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Technology Overview */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-gray-900">Technology Overview</h3>
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Heart className="w-6 h-6 text-blue-600 mr-3" />
-                    <div>
-                      <h4 className="font-semibold">Non-invasive Monitoring</h4>
-                      <p className="text-sm text-gray-600">Advanced biosignal processing</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <Brain className="w-6 h-6 text-blue-600 mr-3" />
-                    <div>
-                      <h4 className="font-semibold">Neural Networks</h4>
-                      <p className="text-sm text-gray-600">Deep learning algorithms</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <Cloud className="w-6 h-6 text-blue-600 mr-3" />
-                    <div>
-                      <h4 className="font-semibold">Cloud Infrastructure</h4>
-                      <p className="text-sm text-gray-600">Real-time data processing</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        {activeTab === 'overview' && <KolibriOverview />}
 
         {activeTab === 'parameters' && (
           <div className="space-y-6">
@@ -296,9 +166,7 @@ const KolibriPlatform = () => {
               </div>
             </div>
 
-            {/* Analytics Dashboard */}
             <div className="grid grid-cols-2 gap-6">
-              {/* Health Trends Chart */}
               <div className="p-6 bg-white border border-blue-100 rounded-lg">
                 <h3 className="text-lg font-semibold mb-4">Health Trends</h3>
                 <div className="h-64">
@@ -335,7 +203,6 @@ const KolibriPlatform = () => {
                 </div>
               </div>
 
-              {/* User Activity Chart */}
               <div className="p-6 bg-white border border-blue-100 rounded-lg">
                 <h3 className="text-lg font-semibold mb-4">User Activity</h3>
                 <div className="h-64">
@@ -367,7 +234,6 @@ const KolibriPlatform = () => {
                 </div>
               </div>
 
-              {/* Parameter Distribution */}
               <div className="p-6 bg-white border border-blue-100 rounded-lg">
                 <h3 className="text-lg font-semibold mb-4">Parameter Distribution</h3>
                 <div className="h-64">
@@ -395,7 +261,6 @@ const KolibriPlatform = () => {
                 </div>
               </div>
 
-              {/* Summary Metrics */}
               <div className="p-6 bg-white border border-blue-100 rounded-lg">
                 <h3 className="text-lg font-semibold mb-4">Performance Metrics</h3>
                 <div className="space-y-4">
