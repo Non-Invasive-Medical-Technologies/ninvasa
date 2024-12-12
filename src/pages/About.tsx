@@ -103,6 +103,52 @@ const About = () => {
             </Card>
           </div>
         </motion.div>
+
+        {/* BL+ Medica Reseller Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="mt-16"
+        >
+          <h2 className="text-2xl font-bold text-medical-800 mb-6">
+            BL+ Medica: Authorized Reseller and Strategic Investor in BioPromin
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700 mb-8">
+            <span className="font-semibold text-medical-700">BL+ Medica</span> proudly serves as the authorized reseller of <span className="font-semibold text-medical-700">ANESA</span> in the Middle East, introducing cutting-edge diagnostic technology to healthcare providers across the region. As an official partner and investor in <span className="font-semibold text-medical-700">BioPromin</span>, BL+ Medica is devoted to advancing non-invasive healthcare solutions that benefit both patients and healthcare systems.
+          </p>
+
+          <h2 className="text-2xl font-bold text-medical-800 mb-6">
+            Why Partner with BL+ Medica?
+          </h2>
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-start gap-3">
+              <Brain className="w-6 h-6 text-medical-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-700">
+                <span className="font-semibold">Exclusive Middle East Distributor & Managed Service Provider</span> for ANESA.
+              </p>
+            </li>
+            <li className="flex items-start gap-3">
+              <Heart className="w-6 h-6 text-medical-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-700">
+                <span className="font-semibold">Investment in Innovation</span> – BL+ Medica champions ANESA's mission to bring AI-powered healthcare diagnostics to a global audience.
+              </p>
+            </li>
+            <li className="flex items-start gap-3">
+              <Globe className="w-6 h-6 text-medical-600 mt-1 flex-shrink-0" />
+              <p className="text-gray-700">
+                <span className="font-semibold">Trusted by Healthcare Providers</span> – BL+ Medica has forged strong partnerships with leading health policy makers, health departments, hospitals and clinics throughout the world.
+              </p>
+            </li>
+          </ul>
+
+          <div className="bg-medical-50 p-8 rounded-lg">
+            <h3 className="text-xl font-bold text-medical-800 mb-4">Our Shared Vision:</h3>
+            <p className="text-lg text-medical-600">
+              In collaboration with BioPromin, we aim to equip Middle Eastern healthcare institutions with <span className="font-semibold">state-of-the-art diagnostic technology</span> that enhances patient care, shortens diagnosis time, and optimizes healthcare costs.
+            </p>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
