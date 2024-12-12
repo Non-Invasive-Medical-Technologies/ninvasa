@@ -36,10 +36,10 @@ const AnesaPlatform = () => {
 
   // Key metrics data
   const metrics = [
-    { icon: Clock, label: 'Analysis Time', value: '6-12 min', trend: '+20%', description: 'Analysis Time' },
-    { icon: Target, label: 'Parameters', value: '136+', trend: '+15%', description: 'Parameters' },
-    { icon: Shield, label: 'Accuracy', value: '99.9%', trend: '+1%', description: 'Accuracy' },
-    { icon: Activity, label: 'Precision', value: '0.07°C', trend: '+5%', description: 'Precision' }
+    { icon: Clock, label: 'Analysis Time', value: '6-12 min', trend: '+20%', description: 'Average analysis duration' },
+    { icon: Target, label: 'Parameters', value: '136+', trend: '+15%', description: 'Health parameters tracked' },
+    { icon: Shield, label: 'Accuracy', value: '99.9%', trend: '+1%', description: 'Diagnostic accuracy' },
+    { icon: Activity, label: 'Precision', value: '0.07°C', trend: '+5%', description: 'Temperature precision' }
   ];
 
   const features = [
@@ -63,6 +63,16 @@ const AnesaPlatform = () => {
       title: "Clinical Validation",
       description: "Validated through extensive clinical trials"
     }
+  ];
+
+  // Sample data for charts
+  const analysisData = [
+    { name: 'Jan', value: 85 },
+    { name: 'Feb', value: 88 },
+    { name: 'Mar', value: 92 },
+    { name: 'Apr', value: 89 },
+    { name: 'May', value: 95 },
+    { name: 'Jun', value: 91 }
   ];
 
   return (
@@ -100,10 +110,10 @@ const AnesaPlatform = () => {
         </div>
 
         {/* Metrics Section */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {metrics.map((metric) => (
-            <div key={metric.label} className="flex items-center p-4 bg-gray-100 rounded-lg">
-              <metric.icon className="h-6 w-6 text-blue-600 mr-2" />
+            <div key={metric.label} className="flex items-center p-4 bg-gray-50 rounded-lg">
+              <metric.icon className="h-6 w-6 text-blue-600 mr-3" />
               <div>
                 <h3 className="font-semibold">{metric.label}</h3>
                 <p className="text-gray-600">{metric.value} <span className="text-green-500">{metric.trend}</span></p>
@@ -116,8 +126,8 @@ const AnesaPlatform = () => {
         {/* Features Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {features.map((feature) => (
-            <div key={feature.title} className="flex items-start p-4 bg-gray-100 rounded-lg">
-              <feature.icon className="h-6 w-6 text-blue-600 mr-2" />
+            <div key={feature.title} className="flex items-start p-4 bg-gray-50 rounded-lg">
+              <feature.icon className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -125,6 +135,23 @@ const AnesaPlatform = () => {
             </div>
           ))}
         </div>
+
+        {/* Analytics Section */}
+        {activeTab === 'analytics' && (
+          <div className="mt-8">
+            <div className="h-64">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={analysisData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Area type="monotone" dataKey="value" stroke="#3b82f6" fill="#93c5fd" />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
