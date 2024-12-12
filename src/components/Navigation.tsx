@@ -32,10 +32,22 @@ const Navigation = () => {
       parent: "/portfolio"
     },
     { href: "/technology", label: "Technology" },
-    { href: "/investment", label: "Investment" },
     { href: "/business", label: "Business Overview" },
-    { href: "/strategy", label: "Strategy" },
-    { href: "/download", label: "Business Plan" },
+    { 
+      href: "/investment", 
+      label: "Investment",
+      parent: "/business"
+    },
+    { 
+      href: "/strategy", 
+      label: "Strategy",
+      parent: "/business"
+    },
+    { 
+      href: "/download", 
+      label: "Business Plan",
+      parent: "/business"
+    },
   ];
 
   const isActive = (link) => {
