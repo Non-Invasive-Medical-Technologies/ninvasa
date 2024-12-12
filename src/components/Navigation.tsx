@@ -41,16 +41,27 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <img
+                src="/placeholder.svg"
+                alt="Logo"
+                className="h-8 w-auto mr-2"
+              />
+              <span className="text-xl font-semibold text-medical-800">
+                Non-Invasive Medical
+              </span>
+            </Link>
+
             <Button 
               variant="ghost" 
               onClick={() => setIsOpen(!isOpen)} 
-              className="md:hidden"
+              className="md:hidden ml-2"
             >
               <Menu className="h-6 w-6" />
             </Button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-4">
+            <div className="hidden md:flex md:items-center md:space-x-4 ml-8">
               {mainLinks.map((link) => (
                 <Link
                   key={link.href}
