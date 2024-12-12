@@ -50,8 +50,8 @@ const Navigation = () => {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          ? "bg-gradient-to-r from-medical-100 to-medical-200 backdrop-blur-md shadow-sm"
+          : "bg-gradient-to-r from-medical-50 to-medical-100"
       )}
     >
       <div className="container mx-auto px-4">
