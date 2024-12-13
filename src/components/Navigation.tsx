@@ -29,6 +29,7 @@ const Navigation = () => {
   const mainLinks: MenuItem[] = [
     { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfolio" },
+    { href: "/business", label: "Business" },
   ];
 
   const aboutLinks: MenuItem[] = [
