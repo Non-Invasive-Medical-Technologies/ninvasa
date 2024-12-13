@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Activity, Heart, Cloud, Search } from "lucide-react";
+import { Activity, Heart, Cloud, Search, ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
   return (
@@ -67,6 +68,13 @@ const Portfolio = () => {
                     </p>
                   </div>
                 </div>
+
+                <Link
+                  to="/anesa"
+                  className="inline-flex items-center mt-4 px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+                >
+                  Learn More About ANESA <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </div>
             </CardContent>
           </Card>
@@ -123,6 +131,13 @@ const Portfolio = () => {
                     </p>
                   </div>
                 </div>
+
+                <Link
+                  to="/kolibri"
+                  className="inline-flex items-center mt-4 px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+                >
+                  Learn More About KOLIBRI <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </div>
             </CardContent>
           </Card>
