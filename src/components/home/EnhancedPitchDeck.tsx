@@ -84,7 +84,7 @@ const EnhancedPitchDeck = () => {
   const competitorData = {
     established: [
       {
-        name: "ANESA",
+        name: "Our Solution",
         parameters: 136,
         time: 12,
         cost: 150,
@@ -170,7 +170,7 @@ const EnhancedPitchDeck = () => {
                   <div
                     key={index}
                     className="relative overflow-hidden bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    onMouseEnter={() => setShowDetails(index)}
+                    onMouseEnter={() => setShowDetails(true)}
                     onMouseLeave={() => setShowDetails(null)}
                   >
                     <div className="p-6">
