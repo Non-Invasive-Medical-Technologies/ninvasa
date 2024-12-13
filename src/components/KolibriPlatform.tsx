@@ -1,4 +1,19 @@
 import React, { useState } from 'react';
+import { 
+  LineChart, 
+  Line, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  Legend, 
+  ResponsiveContainer,
+  AreaChart,
+  Area,
+  PieChart,
+  Pie,
+  Cell
+} from 'recharts';
 import KolibriHeader from './kolibri/KolibriHeader';
 import KolibriMetrics from './kolibri/KolibriMetrics';
 import KolibriOverview from './kolibri/KolibriOverview';
