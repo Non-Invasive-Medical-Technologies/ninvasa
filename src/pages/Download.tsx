@@ -31,7 +31,7 @@ const Download = () => {
       const dummyFileUrl = '/sample-business-plan.pdf';
       const link = document.createElement('a');
       link.href = dummyFileUrl;
-      link.download = 'ANESA-Business-Plan.pdf';
+      link.download = 'Products-and-Services-Business-Plan.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
