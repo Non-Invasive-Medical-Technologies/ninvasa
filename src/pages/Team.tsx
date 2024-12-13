@@ -94,16 +94,9 @@ const Team = () => {
       }
     },
     {
-      name: "Dr. Sarah Chen",
-      role: "Chief Scientific Officer",
-      description: "Leading our research initiatives with over 15 years of experience in medical diagnostics and bioengineering.",
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-    },
-    {
       name: "Dr. Ahmad Al-Rashid",
       role: "General Manager - MENA Region",
       description: "With over 20 years of experience in biotechnology and healthcare technology, Dr. Al-Rashid leads our operations in Dubai. He holds a Ph.D. in Biomedical Engineering and an MBA, combining scientific expertise with strategic business acumen.",
-      imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
       extendedProfile: {
         qualifications: [
           "Ph.D. in Biomedical Engineering from Imperial College London",
@@ -130,12 +123,6 @@ const Team = () => {
       role: "Head of Research & Development",
       description: "Spearheading the development of our non-invasive diagnostic technologies.",
       imageUrl: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"
-    },
-    {
-      name: "Dr. Emily Thompson",
-      role: "Lead Research Scientist",
-      description: "Expert in biomedical signal processing and machine learning applications in healthcare.",
-      imageUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
     }
   ];
 
