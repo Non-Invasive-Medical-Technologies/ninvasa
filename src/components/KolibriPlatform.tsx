@@ -2,22 +2,8 @@ import React, { useState } from 'react';
 import KolibriHeader from './kolibri/KolibriHeader';
 import KolibriMetrics from './kolibri/KolibriMetrics';
 import KolibriOverview from './kolibri/KolibriOverview';
+import KolibriDashboard from './kolibri/dashboard/KolibriDashboard';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { 
-  LineChart, 
-  Line, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  Legend,
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  PieChart,
-  Pie,
-  Cell
-} from 'recharts';
 
 const KolibriPlatform = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -86,10 +72,6 @@ const KolibriPlatform = () => {
     ]
   };
 
-  const toggleCategory = (category) => {
-    setExpandedCategory(expandedCategory === category ? null : category);
-  };
-
   return (
     <div className="w-full space-y-8">
       <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -97,39 +79,7 @@ const KolibriPlatform = () => {
         <KolibriMetrics />
 
         {activeTab === 'overview' && <KolibriOverview />}
-
-        {activeTab === 'parameters' && (
-          <div className="space-y-6">
-            {Object.entries(healthParameters).map(([category, params]) => (
-              <div key={category} className="border border-blue-100 rounded-lg overflow-hidden">
-                <button
-                  onClick={() => toggleCategory(category)}
-                  className="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 transition-colors"
-                >
-                  <span className="font-semibold text-gray-900">
-                    {category.charAt(0).toUpperCase() + category.slice(1)} Parameters
-                  </span>
-                  {expandedCategory === category ? (
-                    <ChevronDown className="w-5 h-5 text-blue-600" />
-                  ) : (
-                    <ChevronRight className="w-5 h-5 text-blue-600" />
-                  )}
-                </button>
-                {expandedCategory === category && (
-                  <div className="p-4 grid grid-cols-2 gap-4">
-                    {params.map((param, index) => (
-                      <div key={index} className="flex items-center">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                        <span className="text-sm text-gray-600">{param}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-
+        {activeTab === 'parameters' && <KolibriDashboard />}
         {activeTab === 'analytics' && (
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-8">
