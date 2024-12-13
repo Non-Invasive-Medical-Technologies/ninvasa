@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Activity, Shield, Target, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
+import EnhancedPitchDeck from "@/components/home/EnhancedPitchDeck";
 
 const Index = () => {
   return (
@@ -107,6 +108,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Enhanced Pitch Deck */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-medical-900 mb-4">
+              Our Technology & Market Position
+            </h2>
+            <p className="text-lg text-medical-600">
+              Leading the future of non-invasive diagnostics
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <EnhancedPitchDeck />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -164,6 +192,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Call to Action Section */}
       <section className="py-20 bg-medical-900">
         <div className="container mx-auto px-4">
           <motion.div
