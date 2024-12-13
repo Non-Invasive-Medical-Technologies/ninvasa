@@ -37,7 +37,7 @@ const Team = () => {
       name: "Mr. Mykola Akhtemiychuk",
       role: "Chief Engineer - KOLIBRI",
       description: "Leading engineer at SC KOLIBRI LLC with extensive experience in mechanical and technical systems development. Certified specialist in ISO standards with expertise in programming and development of high-tech medical equipment.",
-      imageUrl: "/lovable-uploads/ebfb56d6-f8f1-4491-a027-7741f7c21d53.png",
+      imageUrl: "/lovable-uploads/d1e24c32-9340-4528-8f24-f221be5a95a3.png",
       extendedProfile: {
         qualifications: [
           "Chernivtsi National University of Engineer - Designer, Programmer of Electronic Equipment",
