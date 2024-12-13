@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import StrategicPartnership from "@/components/business/StrategicPartnership";
+import SWOTAnalysis from "@/components/business/SWOTAnalysis";
 
 const Business = () => {
   return (
@@ -12,7 +13,10 @@ const Business = () => {
         <h1 className="text-4xl font-bold text-medical-800 mb-12 text-center">
           Business Overview
         </h1>
-        <StrategicPartnership />
+        <div className="space-y-12">
+          <StrategicPartnership />
+          <SWOTAnalysis />
+        </div>
       </motion.div>
     </div>
   );
