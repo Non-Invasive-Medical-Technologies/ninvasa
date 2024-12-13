@@ -34,7 +34,6 @@ const AnesaPlatform = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
 
-  // Key metrics data
   const metrics = [
     { icon: Clock, label: 'Analysis Time', value: '6-12 min', trend: '+20%', description: 'Average analysis duration' },
     { icon: Target, label: 'Parameters', value: '136+', trend: '+15%', description: 'Health parameters tracked' },
@@ -65,20 +64,27 @@ const AnesaPlatform = () => {
     }
   ];
 
-  // Sample data for charts
+  // Enhanced analysis data
   const analysisData = [
-    { name: 'Jan', value: 85 },
-    { name: 'Feb', value: 88 },
-    { name: 'Mar', value: 92 },
-    { name: 'Apr', value: 89 },
-    { name: 'May', value: 95 },
-    { name: 'Jun', value: 91 }
+    { name: 'Jan', value: 85, accuracy: 98, parameters: 120 },
+    { name: 'Feb', value: 88, accuracy: 99, parameters: 125 },
+    { name: 'Mar', value: 92, accuracy: 99, parameters: 130 },
+    { name: 'Apr', value: 89, accuracy: 98, parameters: 132 },
+    { name: 'May', value: 95, accuracy: 99, parameters: 134 },
+    { name: 'Jun', value: 91, accuracy: 99, parameters: 136 }
+  ];
+
+  const performanceMetrics = [
+    { category: 'Speed', value: 95 },
+    { category: 'Accuracy', value: 99 },
+    { category: 'Parameters', value: 100 },
+    { category: 'Cost Efficiency', value: 90 },
+    { category: 'User Satisfaction', value: 95 }
   ];
 
   return (
     <div className="w-full space-y-8">
       <div className="bg-white p-8 rounded-lg shadow-lg">
-        {/* Header Section */}
         <div className="flex items-center justify-between mb-6">
           <div className="space-y-1">
             <div className="flex items-center space-x-3">
@@ -109,7 +115,6 @@ const AnesaPlatform = () => {
           </div>
         </div>
 
-        {/* Metrics Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {metrics.map((metric) => (
             <div key={metric.label} className="flex items-center p-4 bg-gray-50 rounded-lg">
@@ -123,7 +128,6 @@ const AnesaPlatform = () => {
           ))}
         </div>
 
-        {/* Features Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {features.map((feature) => (
             <div key={feature.title} className="flex items-start p-4 bg-gray-50 rounded-lg">
@@ -136,19 +140,80 @@ const AnesaPlatform = () => {
           ))}
         </div>
 
-        {/* Analytics Section */}
+        {/* Enhanced Analytics Section */}
         {activeTab === 'analytics' && (
-          <div className="mt-8">
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={analysisData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Area type="monotone" dataKey="value" stroke="#3b82f6" fill="#93c5fd" />
-                </AreaChart>
-              </ResponsiveContainer>
+          <div className="mt-8 space-y-8">
+            {/* Performance Trends */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Performance Trends</h3>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={analysisData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Area 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#3b82f6" 
+                      fill="#93c5fd" 
+                      name="Analysis Score"
+                    />
+                    <Area 
+                      type="monotone" 
+                      dataKey="accuracy" 
+                      stroke="#10b981" 
+                      fill="#6ee7b7" 
+                      name="Accuracy"
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Performance Radar */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Performance Analysis</h3>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart data={performanceMetrics}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="category" />
+                    <PolarRadiusAxis />
+                    <Radar
+                      name="Performance"
+                      dataKey="value"
+                      stroke="#3b82f6"
+                      fill="#93c5fd"
+                      fillOpacity={0.6}
+                    />
+                    <Legend />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Parameters Growth */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Parameters Growth</h3>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={analysisData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar 
+                      dataKey="parameters" 
+                      fill="#3b82f6" 
+                      name="Total Parameters"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
         )}
