@@ -6,11 +6,8 @@ const Logo = () => {
       <img 
         src="/lovable-uploads/e1b778eb-99d8-41a2-86bf-121d96fa56ce.png" 
         alt="BL+ Medica Logo" 
-        className="h-8 w-auto mr-2"
+        className="h-8 w-auto"
       />
-      <span className="text-xl font-semibold text-medical-800">
-        BL<span className="text-medical-600">+</span>
-      </span>
     </Link>
   );
 };
