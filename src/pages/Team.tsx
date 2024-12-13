@@ -7,7 +7,7 @@ const Team = () => {
       name: "Mr. Anatolii Pulavskyi",
       role: "Chief Technology Officer & Founder - KOLIBRI",
       description: "Inventor and technical visionary behind KOLIBRI's non-invasive diagnostic technology. Master of Science in Engineering with extensive experience in biomedical signal processing and medical device development. Member of the New York Academy of Sciences.",
-      imageUrl: "/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png",
+      imageUrl: "/lovable-uploads/ec9a76d9-da41-48e9-9877-dcae1fc65603.png",
       extendedProfile: {
         qualifications: [
           "Master of Science in Engineering - Kharkiv Higher Air Force Communications School",
