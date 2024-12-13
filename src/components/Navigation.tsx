@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown, Globe } from "lucide-react";
+import { Menu, ChevronDown, Plus } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,7 +41,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <Globe className="h-8 w-8 text-medical-600 mr-2" />
+              <Plus className="h-8 w-8 text-medical-600 mr-2" />
               <span className="text-xl font-semibold text-medical-800">
                 BL<span className="text-medical-600">+</span>MME
               </span>
