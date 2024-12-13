@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, Globe } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,11 +41,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img
-                src="/placeholder.svg"
-                alt="Logo"
-                className="h-8 w-auto mr-2"
-              />
+              <Globe className="h-8 w-8 text-medical-600 mr-2" />
               <span className="text-xl font-semibold text-medical-800">
                 BL<span className="text-medical-600">+</span>MME
               </span>
@@ -81,7 +77,7 @@ const Navigation = () => {
                     About <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="bg-white">
                   <DropdownMenuItem>
                     <Link to="/about" className="w-full">About Us</Link>
                   </DropdownMenuItem>
@@ -98,7 +94,7 @@ const Navigation = () => {
                     Portfolio <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="bg-white">
                   {menuGroups.portfolio.map((item) => (
                     <DropdownMenuItem key={item.href}>
                       <Link to={item.href} className="w-full">
@@ -116,7 +112,7 @@ const Navigation = () => {
                     Technology <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="bg-white">
                   {menuGroups.technology.map((item) => (
                     <DropdownMenuItem key={item.href}>
                       <Link to={item.href} className="w-full">
@@ -134,7 +130,7 @@ const Navigation = () => {
                     Business <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="bg-white">
                   {menuGroups.business.map((item) => (
                     <DropdownMenuItem key={item.href}>
                       <Link to={item.href} className="w-full">
