@@ -1,20 +1,17 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown, Plus } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu } from "lucide-react";
+import Logo from "./navigation/Logo";
+import DesktopNav from "./navigation/DesktopNav";
+import MobileNav from "./navigation/MobileNav";
+import { MenuGroups, MenuItem } from "./navigation/types";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const menuGroups = {
+  const menuGroups: MenuGroups = {
     portfolio: [
       { href: "/anesa", label: "ANESA" },
       { href: "/kolibri", label: "KOLIBRI" },
@@ -29,7 +26,7 @@ const Navigation = () => {
     ],
   };
 
-  const mainLinks = [
+  const mainLinks: MenuItem[] = [
     { href: "/", label: "Home" },
   ];
 
@@ -40,13 +37,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <Plus className="h-8 w-8 text-medical-600 mr-2" />
-              <span className="text-xl font-semibold text-medical-800">
-                BL<span className="text-medical-600">+</span>MME
-              </span>
-            </Link>
-
+            <Logo />
             <Button 
               variant="ghost" 
               onClick={() => setIsOpen(!isOpen)} 
@@ -54,150 +45,19 @@ const Navigation = () => {
             >
               <Menu className="h-6 w-6" />
             </Button>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-4 ml-8">
-              {mainLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "nav-link px-3 py-2 text-sm font-medium",
-                    isActive(link.href) && "text-medical-600"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-              {/* About Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="nav-link">
-                    About <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white">
-                  <DropdownMenuItem>
-                    <Link to="/about" className="w-full">About Us</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link to="/about/biopromin" className="w-full">BioPromin</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {/* Portfolio Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="nav-link">
-                    Portfolio <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white">
-                  {menuGroups.portfolio.map((item) => (
-                    <DropdownMenuItem key={item.href}>
-                      <Link to={item.href} className="w-full">
-                        {item.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {/* Technology Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="nav-link">
-                    Technology <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white">
-                  {menuGroups.technology.map((item) => (
-                    <DropdownMenuItem key={item.href}>
-                      <Link to={item.href} className="w-full">
-                        {item.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {/* Business Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="nav-link">
-                    Business <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white">
-                  {menuGroups.business.map((item) => (
-                    <DropdownMenuItem key={item.href}>
-                      <Link to={item.href} className="w-full">
-                        {item.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+            <DesktopNav 
+              menuGroups={menuGroups} 
+              mainLinks={mainLinks} 
+              isActive={isActive} 
+            />
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {mainLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium",
-                    isActive(link.href)
-                      ? "bg-medical-100 text-medical-600"
-                      : "text-gray-700 hover:bg-medical-50"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="space-y-1">
-                <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase">
-                  About
-                </div>
-                <Link
-                  to="/about"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
-                >
-                  About Us
-                </Link>
-                <Link
-                  to="/about/biopromin"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
-                >
-                  BioPromin
-                </Link>
-              </div>
-              {Object.entries(menuGroups).map(([category, items]) => (
-                <div key={category} className="space-y-1">
-                  <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase">
-                    {category}
-                  </div>
-                  {items.map((item) => (
-                    <Link
-                      key={item.href}
-                      to={item.href}
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <MobileNav 
+          isOpen={isOpen}
+          menuGroups={menuGroups}
+          mainLinks={mainLinks}
+          isActive={isActive}
+        />
       </div>
     </nav>
   );
