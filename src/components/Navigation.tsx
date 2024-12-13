@@ -18,6 +18,7 @@ const Navigation = () => {
     ],
     technology: [
       { href: "/parameters", label: "Test Parameters" },
+      { href: "/technology/roadmap", label: "Roadmap" },
     ],
     business: [
       { href: "/investment", label: "Investment" },

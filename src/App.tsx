@@ -6,6 +6,7 @@ import Portfolio from "./pages/Portfolio";
 import Anesa from "./pages/Anesa";
 import Kolibri from "./pages/Kolibri";
 import Technology from "./pages/Technology";
+import Roadmap from "./pages/Roadmap";
 import Parameters from "./pages/Parameters";
 import Business from "./pages/Business";
 import Investment from "./pages/Investment";
@@ -26,6 +27,7 @@ function App() {
         <Route path="anesa" element={<Anesa />} />
         <Route path="kolibri" element={<Kolibri />} />
         <Route path="technology" element={<Technology />} />
+        <Route path="technology/roadmap" element={<Roadmap />} />
         <Route path="parameters" element={<Parameters />} />
         <Route path="business" element={<Business />} />
         <Route path="investment" element={<Investment />} />
