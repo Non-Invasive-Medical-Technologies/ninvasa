@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,7 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 import { NavigationProps } from "./types";
 
-const DesktopNav = ({ menuGroups, mainLinks, isActive }: NavigationProps) => {
+const DesktopNav = ({ menuGroups, mainLinks, aboutLinks, isActive }: NavigationProps) => {
   return (
     <div className="hidden md:flex md:items-center md:space-x-4 ml-8">
       {mainLinks.map((link) => (
@@ -33,12 +33,13 @@ const DesktopNav = ({ menuGroups, mainLinks, isActive }: NavigationProps) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-white">
-          <DropdownMenuItem>
-            <Link to="/about" className="w-full">About Us</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link to="/about/biopromin" className="w-full">BioPromin</Link>
-          </DropdownMenuItem>
+          {aboutLinks.map((item) => (
+            <DropdownMenuItem key={item.href}>
+              <Link to={item.href} className="w-full">
+                {item.label}
+              </Link>
+            </DropdownMenuItem>
+          ))}
         </DropdownMenuContent>
       </DropdownMenu>
 

@@ -30,6 +30,12 @@ const Navigation = () => {
     { href: "/", label: "Home" },
   ];
 
+  const aboutLinks: MenuItem[] = [
+    { href: "/about", label: "About Us" },
+    { href: "/about/team", label: "Our Team" },
+    { href: "/about/biopromin", label: "BioPromin" },
+  ];
+
   const isActive = (href: string) => location.pathname === href;
 
   const handleCloseMobileMenu = () => {
@@ -51,7 +57,8 @@ const Navigation = () => {
             </Button>
             <DesktopNav 
               menuGroups={menuGroups} 
-              mainLinks={mainLinks} 
+              mainLinks={mainLinks}
+              aboutLinks={aboutLinks}
               isActive={isActive} 
             />
           </div>
@@ -60,6 +67,7 @@ const Navigation = () => {
           isOpen={isOpen}
           menuGroups={menuGroups}
           mainLinks={mainLinks}
+          aboutLinks={aboutLinks}
           isActive={isActive}
           onLinkClick={handleCloseMobileMenu}
         />

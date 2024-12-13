@@ -10,6 +10,8 @@ export interface MenuGroups {
 export interface NavigationProps {
   menuGroups: MenuGroups;
   mainLinks: MenuItem[];
+  aboutLinks: MenuItem[];
   isActive: (href: string) => boolean;
   onLinkClick?: () => void;
+  isOpen?: boolean;
 }
