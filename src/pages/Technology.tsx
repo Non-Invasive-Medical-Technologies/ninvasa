@@ -4,6 +4,7 @@ import TechnologyOverview from '@/components/technology/TechnologyOverview';
 import TechnologyVisualization from '@/components/technology/TechnologyVisualization';
 import PatentTechnology from '@/components/technology/PatentTechnology';
 import ClinicalApplications from '@/components/technology/ClinicalApplications';
+import TechnicalSpecs from '@/components/technology/TechnicalSpecs';
 
 const Technology = () => {
   return (
@@ -11,6 +12,7 @@ const Technology = () => {
       <TechnologyHero />
       <div className="container mx-auto px-4 py-12 space-y-12">
         <TechnologyOverview />
+        <TechnicalSpecs />
         <TechnologyVisualization />
         <PatentTechnology />
         <ClinicalApplications />
