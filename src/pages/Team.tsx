@@ -10,6 +10,32 @@ const Team = () => {
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     },
     {
+      name: "Dr. Ahmad Al-Rashid",
+      role: "General Manager - MENA Region",
+      description: "With over 20 years of experience in biotechnology and healthcare technology, Dr. Al-Rashid leads our operations in Dubai. He holds a Ph.D. in Biomedical Engineering and an MBA, combining scientific expertise with strategic business acumen.",
+      imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+      extendedProfile: {
+        qualifications: [
+          "Ph.D. in Biomedical Engineering from Imperial College London",
+          "MBA from INSEAD",
+          "Master's in Clinical Research from Johns Hopkins University"
+        ],
+        expertise: [
+          "Clinical Research Management",
+          "Healthcare Technology Implementation",
+          "Strategic Business Development",
+          "Project Management (PMP Certified)",
+          "Regulatory Compliance (MENA Region)"
+        ],
+        experience: [
+          "15+ years managing clinical research programs",
+          "10+ years in healthcare technology implementation",
+          "Led successful market entries in 5 MENA countries",
+          "Published researcher with 20+ peer-reviewed papers"
+        ]
+      }
+    },
+    {
       name: "Michael Roberts",
       role: "Head of Research & Development",
       description: "Spearheading the development of our non-invasive diagnostic technologies.",
