@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import TechnologyHero from "@/components/technology/TechnologyHero";
 import TechnologyOverview from "@/components/technology/TechnologyOverview";
 import PatentTechnology from "@/components/technology/PatentTechnology";
+import ClinicalApplications from "@/components/technology/ClinicalApplications";
 
 const Technology = () => {
   return (
@@ -14,6 +15,7 @@ const Technology = () => {
       <TechnologyHero />
       <TechnologyOverview />
       <PatentTechnology />
+      <ClinicalApplications />
     </motion.div>
   );
 };

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import StrategicPartnership from "@/components/business/StrategicPartnership";
 import SWOTAnalysis from "@/components/business/SWOTAnalysis";
 import GCCMarketAnalysis from "@/components/business/GCCMarketAnalysis";
+import ClinicalApplications from "@/components/technology/ClinicalApplications";
 
 const Business = () => {
   return (
@@ -18,6 +19,7 @@ const Business = () => {
           <StrategicPartnership />
           <SWOTAnalysis />
           <GCCMarketAnalysis />
+          <ClinicalApplications />
         </div>
       </motion.div>
     </div>
