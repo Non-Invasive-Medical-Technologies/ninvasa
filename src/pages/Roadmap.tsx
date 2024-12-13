@@ -1,31 +1,67 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { Milestone, Target, Rocket, Flag } from 'lucide-react';
+import { Check, Clock } from 'lucide-react';
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 
 const Roadmap = () => {
   const milestones = [
     {
-      phase: "Q2 2024",
-      title: "Market Entry",
-      description: "Launch in UAE healthcare market",
-      status: "In Progress",
-      icon: Rocket,
+      description: "Medical research",
+      status: "completed",
+      notes: "Declared accuracies are based on R&D to date. New R&D initiatives are ongoing.",
     },
     {
-      phase: "Q3 2024",
-      title: "Platform Enhancement",
-      description: "Integration of advanced AI diagnostics",
-      status: "Planned",
-      icon: Target,
+      description: "Machine Learning training (AI)",
+      status: "completed",
+      notes: "Developed. Continuous improvement.",
     },
     {
-      phase: "Q4 2024",
-      title: "Market Expansion",
-      description: "Entry into Saudi Arabia and Qatar markets",
-      status: "Planned",
-      icon: Flag,
+      description: "Patent & scientific recognition",
+      status: "completed",
+      notes: "12 scientific publications.",
     },
+    {
+      description: "CE/FDA documentation preparation",
+      status: "completed",
+      notes: "FDA/CE documentation being updated. Small clinical trial required to demonstrate signal quality for certification.",
+    },
+    {
+      description: "Market entry Strategy",
+      status: "completed",
+      notes: "Developed.",
+    },
+    {
+      description: "Branding & Marketing",
+      status: "in-progress",
+      notes: "Partner selected.",
+    },
+    {
+      description: "Mass production set-up",
+      status: "in-progress",
+      notes: "Partner selected.",
+    },
+    {
+      description: "Develop new App",
+      status: "in-progress",
+      notes: "Based on market testing, new UI is being developed.",
+    },
+    {
+      description: "Official product launch (certified)",
+      status: "in-progress",
+      notes: "Q3 2025 – Q1 2026 (Depending on certification queue)",
+    },
+  ];
+
+  const futureGoals = [
+    "Certify a model that works with BLUETOOTH BLE.",
+    "Develop new software that will work under OS WINDOWS, macOS, iOS, ANDROID",
+    "Consider the possibility of integrating the medical device with TABLET under ANDROID OS",
+    "Switch to the option of using the software with a monthly subscription fee.",
+    "Conduct technical tests in an accredited laboratory in the EU.",
+    "Conduct new clinical trials in the EU.",
+    "Obtain CE marking of the medical device in accordance with the new EU regulation 2017/745",
+    "Set a deadline for the implementation of the above items by December 2026.",
   ];
 
   return (
@@ -37,44 +73,81 @@ const Roadmap = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold mb-4">Technology Roadmap</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Our strategic vision for advancing healthcare diagnostics through innovation
+          <h1 className="text-4xl font-bold mb-4">Roadmap for Modernization of Medical Equipment</h1>
+          <p className="text-xl text-medical-600 max-w-3xl mx-auto">
+            "Most milestones already reached, giving confidence in the success"
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {milestones.map((milestone, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <milestone.icon className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">{milestone.phase}</h3>
-                    <p className="text-sm text-gray-500">{milestone.title}</p>
-                  </div>
-                  <span className={`ml-auto px-3 py-1 rounded-full text-sm ${
-                    milestone.status === "In Progress" 
-                      ? "bg-green-100 text-green-600"
-                      : "bg-blue-100 text-blue-600"
-                  }`}>
-                    {milestone.status}
-                  </span>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{milestone.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-12"
+        >
+          <Card>
+            <CardHeader>
+              <h2 className="text-2xl font-bold">Current Milestones</h2>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Description</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Notes</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {milestones.map((milestone, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{milestone.description}</TableCell>
+                      <TableCell>
+                        {milestone.status === "completed" ? (
+                          <Check className="h-5 w-5 text-green-500" />
+                        ) : (
+                          <Clock className="h-5 w-5 text-blue-500" />
+                        )}
+                      </TableCell>
+                      <TableCell className="text-gray-600">{milestone.notes}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <Card>
+            <CardHeader>
+              <h2 className="text-2xl font-bold">Future Development Goals</h2>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {futureGoals.map((goal, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Clock className="h-5 w-5 text-medical-600 mt-1 flex-shrink-0" />
+                    <span>{goal}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center mt-8 text-sm text-gray-600"
+        >
+          *Detailed timeline available on request.
+        </motion.div>
       </div>
     </div>
   );
