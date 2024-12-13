@@ -1,6 +1,7 @@
 import React from 'react';
 import FinancialDeck from '../components/investment/FinancialDeck';
 import InvestmentAskSection from '../components/investment/InvestmentAskSection';
+import MarketSection from '../components/investment/MarketSection';
 
 const Investment = () => {
   return (
@@ -9,6 +10,9 @@ const Investment = () => {
       <div className="space-y-12">
         <div className="section-fade-in">
           <FinancialDeck />
+        </div>
+        <div className="section-fade-in">
+          <MarketSection />
         </div>
         <div className="section-fade-in">
           <InvestmentAskSection />
