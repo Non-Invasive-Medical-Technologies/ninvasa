@@ -15,6 +15,13 @@ const Technology = () => {
     <div className="min-h-screen bg-gray-50">
       <TechnologyHero />
       <div className="container mx-auto px-4 py-12 space-y-12">
+        <div className="text-center">
+          <p className="text-lg text-medical-600">
+            Our technology is developed under the leadership of Dr. Mykola Pulavskyi and Dr. Ahmad Al-Rashid,
+            combining decades of expertise in medical diagnostics and signal processing.
+          </p>
+        </div>
+        
         <TechnologyOverview />
         
         {/* Quick Access Cards */}

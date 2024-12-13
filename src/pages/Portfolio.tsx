@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Activity, Heart, Cloud, Search, ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
+  // ... keep existing code (component structure and imports)
+
   return (
     <div className="container mx-auto px-4 py-20">
       <motion.div
@@ -14,7 +16,7 @@ const Portfolio = () => {
       >
         <h1 className="text-4xl font-bold mb-4">Product Portfolio</h1>
         <p className="text-xl text-medical-600 max-w-2xl mx-auto">
-          Advanced non-invasive diagnostic solutions for modern healthcare
+          Advanced non-invasive diagnostic solutions for modern healthcare, developed by our expert team led by Dr. Mykola Pulavskyi and Dr. Ahmad Al-Rashid
         </p>
       </motion.div>
 

@@ -15,9 +15,16 @@ const Business = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl font-bold text-medical-800 mb-12 text-center">
+        <h1 className="text-4xl font-bold text-medical-800 mb-6 text-center">
           Business Overview
         </h1>
+        
+        <div className="text-center mb-12">
+          <p className="text-lg text-medical-600">
+            Led by Dr. Mykola Pulavskyi and our regional manager Dr. Ahmad Al-Rashid,
+            we're expanding our innovative medical solutions across global markets.
+          </p>
+        </div>
 
         {/* Quick Access Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
