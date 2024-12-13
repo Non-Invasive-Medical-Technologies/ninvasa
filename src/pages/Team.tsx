@@ -4,6 +4,69 @@ import TeamMember from "@/components/team/TeamMember";
 const Team = () => {
   const team = [
     {
+      name: "Mr. Anatolii Pulavskyi",
+      role: "Chief Technology Officer & Founder - KOLIBRI",
+      description: "Inventor and technical visionary behind KOLIBRI's non-invasive diagnostic technology. Master of Science in Engineering with extensive experience in biomedical signal processing and medical device development. Member of the New York Academy of Sciences.",
+      imageUrl: "/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png",
+      extendedProfile: {
+        qualifications: [
+          "Master of Science in Engineering - Kharkiv Higher Air Force Communications School",
+          "Member of the New York Academy of Sciences",
+          "Multiple patent holder in non-invasive medical diagnostics"
+        ],
+        expertise: [
+          "Non-invasive diagnostic technologies",
+          "Medical device development",
+          "Software development and programming",
+          "International business development",
+          "ISO 13485 Medical devices quality management"
+        ],
+        patents: [
+          "US Patent 10,531,836 B2 - Device and system for signal decomposition",
+          "CN Patent 202210905914 - Non-invasive physiological testing cabin",
+          "Multiple Ukrainian patents in medical diagnostics and analysis"
+        ],
+        publications: [
+          "Author of numerous scientific papers on non-invasive diagnostics",
+          "Published research on glucose concentration measurement",
+          "Contributions to medical device methodology and guidelines"
+        ]
+      }
+    },
+    {
+      name: "Mr. Mykola Akhtemiychuk",
+      role: "Chief Engineer - KOLIBRI",
+      description: "Leading engineer at SC KOLIBRI LLC with extensive experience in mechanical and technical systems development. Certified specialist in ISO standards with expertise in programming and development of high-tech medical equipment.",
+      imageUrl: "/lovable-uploads/ebfb56d6-f8f1-4491-a027-7741f7c21d53.png",
+      extendedProfile: {
+        qualifications: [
+          "Chernivtsi National University of Engineer - Designer, Programmer of Electronic Equipment",
+          "Snyatyn Agricultural College - Mechanical Machinery",
+          "Certified specialist according to ISO 13485: 2016 and ISO 19011: 2018 standards from 2021"
+        ],
+        expertise: [
+          "Programming (Pascal, Delphi)",
+          "Mechanical and Technical Systems Development",
+          "Kinematic Schemes Development",
+          "CAD Software Proficiency"
+        ],
+        experience: [
+          "Chief Engineer at SC KOLIBRI LLC since 2021",
+          "BIOPROMIN LTD - Research and development of medical equipment since 2010"
+        ],
+        software: [
+          "Kompas 3D",
+          "SolidWorks",
+          "AutoCAD Invertor"
+        ],
+        languages: [
+          "Ukrainian (Native)",
+          "Russian (Basic)",
+          "Polish (Basic)"
+        ]
+      }
+    },
+    {
       name: "Dr. Sarah Chen",
       role: "Chief Scientific Officer",
       description: "Leading our research initiatives with over 15 years of experience in medical diagnostics and bioengineering.",
@@ -32,36 +95,6 @@ const Team = () => {
           "10+ years in healthcare technology implementation",
           "Led successful market entries in 5 MENA countries",
           "Published researcher with 20+ peer-reviewed papers"
-        ]
-      }
-    },
-    {
-      name: "Mr. Anatolii Pulavskyi",
-      role: "Chief Technology Officer & Founder - KOLIBRI",
-      description: "Inventor and technical visionary behind KOLIBRI's non-invasive diagnostic technology. Master of Science in Engineering with extensive experience in biomedical signal processing and medical device development. Member of the New York Academy of Sciences.",
-      imageUrl: "/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png",
-      extendedProfile: {
-        qualifications: [
-          "Master of Science in Engineering - Kharkiv Higher Air Force Communications School",
-          "Member of the New York Academy of Sciences",
-          "Multiple patent holder in non-invasive medical diagnostics"
-        ],
-        expertise: [
-          "Non-invasive diagnostic technologies",
-          "Medical device development",
-          "Software development and programming",
-          "International business development",
-          "ISO 13485 Medical devices quality management"
-        ],
-        patents: [
-          "US Patent 10,531,836 B2 - Device and system for signal decomposition",
-          "CN Patent 202210905914 - Non-invasive physiological testing cabin",
-          "Multiple Ukrainian patents in medical diagnostics and analysis"
-        ],
-        publications: [
-          "Author of numerous scientific papers on non-invasive diagnostics",
-          "Published research on glucose concentration measurement",
-          "Contributions to medical device methodology and guidelines"
         ]
       }
     },
