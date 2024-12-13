@@ -36,6 +36,36 @@ const Team = () => {
       }
     },
     {
+      name: "Mr. Anatolii Pulavskyi",
+      role: "Chief Technology Officer & Founder - KOLIBRI",
+      description: "Inventor and technical visionary behind KOLIBRI's non-invasive diagnostic technology. Master of Science in Engineering with extensive experience in biomedical signal processing and medical device development. Member of the New York Academy of Sciences.",
+      imageUrl: "/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png",
+      extendedProfile: {
+        qualifications: [
+          "Master of Science in Engineering - Kharkiv Higher Air Force Communications School",
+          "Member of the New York Academy of Sciences",
+          "Multiple patent holder in non-invasive medical diagnostics"
+        ],
+        expertise: [
+          "Non-invasive diagnostic technologies",
+          "Medical device development",
+          "Software development and programming",
+          "International business development",
+          "ISO 13485 Medical devices quality management"
+        ],
+        patents: [
+          "US Patent 10,531,836 B2 - Device and system for signal decomposition",
+          "CN Patent 202210905914 - Non-invasive physiological testing cabin",
+          "Multiple Ukrainian patents in medical diagnostics and analysis"
+        ],
+        publications: [
+          "Author of numerous scientific papers on non-invasive diagnostics",
+          "Published research on glucose concentration measurement",
+          "Contributions to medical device methodology and guidelines"
+        ]
+      }
+    },
+    {
       name: "Michael Roberts",
       role: "Head of Research & Development",
       description: "Spearheading the development of our non-invasive diagnostic technologies.",
