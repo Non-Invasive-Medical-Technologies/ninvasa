@@ -118,7 +118,7 @@ const Download = () => {
             </form>
 
             <div className="mt-6 text-center text-sm text-gray-500">
-              <p>By downloading, you agree to receive updates about ANESA's products and services.</p>
+              <p>By downloading, you agree to receive updates about our products and services.</p>
             </div>
           </CardContent>
         </Card>
