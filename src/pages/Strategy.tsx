@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import BusinessModelSection from "@/components/business/BusinessModelSection";
+import MarketHeatmap from "@/components/business/MarketHeatmap";
 import ROICalculator from "@/components/business/ROICalculator";
 
 const Strategy = () => {
@@ -15,6 +16,7 @@ const Strategy = () => {
         </h1>
         <div className="space-y-12">
           <BusinessModelSection />
+          <MarketHeatmap />
           <ROICalculator />
         </div>
       </motion.div>
