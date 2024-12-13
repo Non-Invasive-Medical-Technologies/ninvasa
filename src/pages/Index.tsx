@@ -8,7 +8,13 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-medical-800 to-medical-700/90 z-0" />
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-500 to-cyan-400 z-0"
+          style={{
+            backgroundImage: "linear-gradient(135deg, rgb(108, 0, 209) 0%, rgb(0, 163, 255) 50%, rgb(0, 245, 255) 100%)"
+          }}
+        />
+        <div className="absolute inset-0 bg-black/10 z-0" /> {/* Subtle overlay for better text readability */}
         <div className="container mx-auto px-4 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -20,7 +26,7 @@ const Index = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="inline-block px-4 py-1 mb-4 text-medical-50 bg-medical-600/20 rounded-full text-sm font-medium"
+              className="inline-block px-4 py-1 mb-4 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium text-white"
             >
               Advancing Healthcare in MENA
             </motion.span>
@@ -38,7 +44,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-lg md:text-xl text-medical-50 max-w-2xl mx-auto mb-8"
+              className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
             >
               Partnering with BioPromin to revolutionize healthcare diagnostics
               across the Middle East through innovative non-invasive solutions.
@@ -50,7 +56,7 @@ const Index = () => {
             >
               <Link
                 to="/investment"
-                className="inline-flex items-center px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white text-medical-800 rounded-lg hover:bg-white/90 transition-colors"
               >
                 Investment Opportunity
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -59,7 +65,7 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
