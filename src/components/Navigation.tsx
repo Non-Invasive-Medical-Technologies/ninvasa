@@ -32,6 +32,10 @@ const Navigation = () => {
 
   const isActive = (href: string) => location.pathname === href;
 
+  const handleCloseMobileMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,6 +61,7 @@ const Navigation = () => {
           menuGroups={menuGroups}
           mainLinks={mainLinks}
           isActive={isActive}
+          onLinkClick={handleCloseMobileMenu}
         />
       </div>
     </nav>

@@ -11,4 +11,5 @@ export interface NavigationProps {
   menuGroups: MenuGroups;
   mainLinks: MenuItem[];
   isActive: (href: string) => boolean;
+  onLinkClick?: () => void;
 }

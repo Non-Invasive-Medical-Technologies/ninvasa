@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { NavigationProps } from "./types";
 
-const MobileNav = ({ isOpen, menuGroups, mainLinks, isActive }: NavigationProps & { isOpen: boolean }) => {
+const MobileNav = ({ isOpen, menuGroups, mainLinks, isActive, onLinkClick }: NavigationProps & { isOpen: boolean, onLinkClick?: () => void }) => {
   if (!isOpen) return null;
+
+  const handleClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
 
   return (
     <div className="md:hidden">
@@ -12,6 +18,7 @@ const MobileNav = ({ isOpen, menuGroups, mainLinks, isActive }: NavigationProps 
           <Link
             key={link.href}
             to={link.href}
+            onClick={handleClick}
             className={cn(
               "block px-3 py-2 rounded-md text-base font-medium",
               isActive(link.href)
@@ -28,12 +35,14 @@ const MobileNav = ({ isOpen, menuGroups, mainLinks, isActive }: NavigationProps 
           </div>
           <Link
             to="/about"
+            onClick={handleClick}
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
           >
             About Us
           </Link>
           <Link
             to="/about/biopromin"
+            onClick={handleClick}
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
           >
             BioPromin
@@ -48,6 +57,7 @@ const MobileNav = ({ isOpen, menuGroups, mainLinks, isActive }: NavigationProps 
               <Link
                 key={item.href}
                 to={item.href}
+                onClick={handleClick}
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-medical-50"
               >
                 {item.label}
