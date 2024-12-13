@@ -67,6 +67,33 @@ const Team = () => {
       }
     },
     {
+      name: "Dr. Sergii Kryvenko",
+      role: "PhD, Data Scientist",
+      description: "Over 15 years of experience in Data Science with a PhD in Remote Sensing. Expert in digital signal processing, biomedical signal processing, and machine learning. Senior member of IEEE and chairman of IEEE Engineering in Medicine and Biology Society (Ukraine section).",
+      extendedProfile: {
+        qualifications: [
+          "PhD in Remote Sensing - National Aerospace University 'KhAI'",
+          "MS in Information Communication Networks - National University of Radioelectronics",
+          "BS in Information Communication Networks - National University of Radioelectronics",
+          "Certified in Data Analysis and Machine Learning by AWS, Coursera and Kaggle",
+          "Certified for Biomedical Responsible Conduct of Research by CITI program"
+        ],
+        expertise: [
+          "Digital signal processing",
+          "Biomedical signal processing",
+          "Machine learning and data analysis",
+          "Image preprocessing and filtering",
+          "Scientific research and clinical trials",
+          "Advanced programming skills"
+        ],
+        location: "Kharkiv, Ukraine",
+        publications: [
+          "Multiple research papers on signal processing and data compression",
+          "Dissertation: 'Methods for compression and filtering of remote sensing data with providing high visual quality'"
+        ]
+      }
+    },
+    {
       name: "Dr. Sarah Chen",
       role: "Chief Scientific Officer",
       description: "Leading our research initiatives with over 15 years of experience in medical diagnostics and bioengineering.",
