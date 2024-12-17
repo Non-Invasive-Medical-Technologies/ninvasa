@@ -15,6 +15,7 @@ const Navigation = () => {
     portfolio: [
       { href: "/anesa", label: "ANESA" },
       { href: "/kolibri", label: "KOLIBRI" },
+      { href: "/slideshow", label: "Slideshow" },
     ],
     technology: [
       { href: "/parameters", label: "Test Parameters" },

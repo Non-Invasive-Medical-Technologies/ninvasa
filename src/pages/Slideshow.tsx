@@ -83,10 +83,13 @@ const Slideshow = () => {
             loop: true,
           }}
           className="w-full"
-          onSelect={(api) => {
-            const selectedIndex = api.selectedScrollSnap();
-            setCurrentSlide(selectedIndex);
-            console.log("Selected slide:", selectedIndex);
+          setApi={(api) => {
+            if (api) {
+              api.on("select", () => {
+                setCurrentSlide(api.selectedScrollSnap());
+                console.log("Selected slide:", api.selectedScrollSnap());
+              });
+            }
           }}
         >
           <CarouselContent>
