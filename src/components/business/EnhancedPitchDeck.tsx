@@ -4,7 +4,7 @@ const EnhancedPitchDeck = () => {
   return (
     <div className="space-y-8">
       {/* Cover Slide */}
-      <div className="bg-gradient-to-r from-medical-600 to-medical-800 text-white p-8 rounded-lg">
+      <div className="bg-gradient-to-r from-medical-600 to-medical-800 text-white p-8 rounded-lg relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <h1 className="text-4xl font-bold">Pioneering the Future of Healthcare</h1>
           <p className="text-xl">Non-Invasive Medical Technologies</p>
