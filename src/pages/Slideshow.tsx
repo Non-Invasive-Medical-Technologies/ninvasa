@@ -18,6 +18,7 @@ import GCCMarketAnalysis from '@/components/business/GCCMarketAnalysis';
 import ROICalculator from '@/components/business/ROICalculator';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
 import StrategicPartnership from '@/components/business/StrategicPartnership';
+import { useToast } from "@/components/ui/use-toast";
 
 const slides = [
   {
@@ -111,22 +112,18 @@ const slides = [
 
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { toast } = useToast();
 
   const handleDownload = () => {
-    // Replace this URL with your actual deck PDF URL when ready
-    const deckUrl = '/business-deck.pdf';
-    
-    // Create a temporary link element
-    const link = document.createElement('a');
-    link.href = deckUrl;
-    link.download = 'BioPromin-Business-Deck.pdf';
-    
-    // Append to document, trigger click, and remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    console.log('Downloading business deck...');
+    // For now, show a toast notification since the PDF is not ready
+    toast({
+      title: "Coming Soon",
+      description: "The presentation deck will be available for download shortly.",
+      duration: 3000,
+    });
+
+    // Log for debugging
+    console.log('Download deck requested - PDF not yet available');
   };
 
   return (
