@@ -5,7 +5,7 @@ import { MessageSquare, ArrowRight } from 'lucide-react';
 const HeroSection = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const device = document.querySelector('.device-model');
+      const device = document.querySelector('.device-model') as HTMLElement;
       if (!device) return;
       
       const { clientX, clientY } = e;
