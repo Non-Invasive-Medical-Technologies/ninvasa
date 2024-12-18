@@ -7,7 +7,6 @@ const Team = () => {
       name: "Mr. Anatolii Pulavskyi",
       role: "Chief Technology Officer & Founder - KOLIBRI",
       description: "Inventor and technical visionary behind KOLIBRI's non-invasive diagnostic technology. Master of Science in Engineering with extensive experience in biomedical signal processing and medical device development. Member of the New York Academy of Sciences.",
-      imageUrl: "/lovable-uploads/ec9a76d9-da41-48e9-9877-dcae1fc65603.png",
       extendedProfile: {
         qualifications: [
           "Master of Science in Engineering - Kharkiv Higher Air Force Communications School",
@@ -37,7 +36,6 @@ const Team = () => {
       name: "Mr. Mykola Akhtemiychuk",
       role: "Chief Engineer - KOLIBRI",
       description: "Leading engineer at SC KOLIBRI LLC with extensive experience in mechanical and technical systems development. Certified specialist in ISO standards with expertise in programming and development of high-tech medical equipment.",
-      imageUrl: "/lovable-uploads/d1e24c32-9340-4528-8f24-f221be5a95a3.png",
       extendedProfile: {
         qualifications: [
           "Chernivtsi National University of Engineer - Designer, Programmer of Electronic Equipment",
@@ -121,8 +119,7 @@ const Team = () => {
     {
       name: "Michael Roberts",
       role: "Head of Research & Development",
-      description: "Spearheading the development of our non-invasive diagnostic technologies.",
-      imageUrl: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"
+      description: "Spearheading the development of our non-invasive diagnostic technologies."
     }
   ];
 
