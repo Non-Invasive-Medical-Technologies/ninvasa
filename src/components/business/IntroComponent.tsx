@@ -60,7 +60,7 @@ const IntroComponent = () => {
             <h2 className="text-2xl font-bold text-blue-600 mb-6">Comprehensive Product Portfolio</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-6 border border-blue-100 rounded-lg">
-                <h3 className="text-xl font-semibold text-blue-600 mb-4">DAD-ANI</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-4">ANESA</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Award className="w-5 h-5 text-blue-500 mr-2" />
