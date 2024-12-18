@@ -5,6 +5,7 @@ import { AnimatedNumber } from '@/components/business/AnimatedNumber';
 import BusinessModelSection from '@/components/business/BusinessModelSection';
 import MarketVerticalsSection from '@/components/business/MarketVerticalsSection';
 import GCCMarketAnalysis from '@/components/business/GCCMarketAnalysis';
+import AnimatedMarketHeatmap from '@/components/business/AnimatedMarketHeatmap';
 import ROICalculator from '@/components/business/ROICalculator';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
 import StrategicPartnership from '@/components/business/StrategicPartnership';
@@ -36,6 +37,7 @@ export const slides = [
     component: (
       <div className="space-y-8">
         <GCCMarketAnalysis />
+        <AnimatedMarketHeatmap />
         <div className="grid grid-cols-2 gap-6">
           <div className="p-6 bg-medical-50 rounded-lg text-center">
             <h3 className="text-xl font-bold mb-4">Total Addressable Market</h3>
