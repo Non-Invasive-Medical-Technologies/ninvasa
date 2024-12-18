@@ -16,15 +16,19 @@ export const slides = [
     id: 1,
     section: "Executive Overview",
     title: "Revolutionizing Healthcare Diagnostics",
-    component: <EnhancedPitchDeck />,
+    component: (
+      <div className="space-y-6">
+        <EnhancedPitchDeck />
+        <PatentTechnologySection />
+      </div>
+    ),
   },
   {
     id: 2,
     section: "Company Overview",
-    title: "Our Technology Platforms",
+    title: "Our Business Model",
     component: (
       <div className="space-y-6">
-        <PatentTechnologySection />
         <BusinessModelSection />
         <MarketVerticalsSection />
       </div>
