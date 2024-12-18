@@ -13,6 +13,11 @@ import CompetitorMatrix from '@/components/competition/CompetitorMatrix';
 import { AnimatedNumber } from '@/components/business/AnimatedNumber';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
+import BusinessModelSection from '@/components/business/BusinessModelSection';
+import GCCMarketAnalysis from '@/components/business/GCCMarketAnalysis';
+import ROICalculator from '@/components/business/ROICalculator';
+import PatentTechnologySection from '@/components/business/PatentTechnologySection';
+import StrategicPartnership from '@/components/business/StrategicPartnership';
 
 const slides = [
   {
@@ -27,25 +32,8 @@ const slides = [
     title: "Our Technology Platforms",
     component: (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold">ANESA & KOLIBRI Platforms</h2>
-        <div className="grid grid-cols-2 gap-6">
-          <div className="p-6 bg-medical-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-4">ANESA Platform</h3>
-            <ul className="space-y-2">
-              <li>136+ health parameters</li>
-              <li>6-12 minute screening</li>
-              <li>Non-invasive technology</li>
-            </ul>
-          </div>
-          <div className="p-6 bg-medical-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-4">KOLIBRI Platform</h3>
-            <ul className="space-y-2">
-              <li>40+ blood parameters</li>
-              <li>2-5 minute analysis</li>
-              <li>Real-time monitoring</li>
-            </ul>
-          </div>
-        </div>
+        <PatentTechnologySection />
+        <BusinessModelSection />
       </div>
     ),
   },
@@ -54,7 +42,8 @@ const slides = [
     section: "Market Analysis",
     title: "Market Opportunity",
     component: (
-      <div className="space-y-6">
+      <div className="space-y-8">
+        <GCCMarketAnalysis />
         <div className="grid grid-cols-2 gap-6">
           <div className="p-6 bg-medical-50 rounded-lg text-center">
             <h3 className="text-xl font-bold mb-4">Total Addressable Market</h3>
@@ -86,11 +75,17 @@ const slides = [
   },
   {
     id: 6,
+    section: "Strategic Partnerships",
+    title: "Key Partnerships & Collaborations",
+    component: <StrategicPartnership />,
+  },
+  {
+    id: 7,
     section: "Investment",
     title: "Investment Opportunity",
     component: (
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold">Investment Details</h2>
+        <ROICalculator />
         <div className="grid grid-cols-2 gap-6">
           <div className="p-6 bg-medical-50 rounded-lg">
             <h3 className="text-xl font-bold mb-4">Funding Required</h3>
