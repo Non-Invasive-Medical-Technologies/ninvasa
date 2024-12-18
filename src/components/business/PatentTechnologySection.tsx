@@ -20,7 +20,7 @@ const PatentTechnologySection = () => {
             <div className="flex items-center mb-4">
               <Shield className="w-8 h-8 text-medical-600 mr-3" />
               <div>
-                <h3 className="text-lg font-semibold">Ukrainian Patent No. 60890</h3>
+                <h3 className="text-lg font-semibold">Global Patent No. 60890</h3>
                 <p className="text-sm text-gray-600">Registered June 25, 2011</p>
               </div>
             </div>
