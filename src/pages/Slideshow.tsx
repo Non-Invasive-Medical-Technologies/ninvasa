@@ -112,6 +112,23 @@ const slides = [
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const handleDownload = () => {
+    // Replace this URL with your actual deck PDF URL when ready
+    const deckUrl = '/business-deck.pdf';
+    
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = deckUrl;
+    link.download = 'BioPromin-Business-Deck.pdf';
+    
+    // Append to document, trigger click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    console.log('Downloading business deck...');
+  };
+
   return (
     <div className="container mx-auto py-10 px-4">
       <div className="max-w-6xl mx-auto">
@@ -155,6 +172,17 @@ const Slideshow = () => {
             <CarouselNext className="relative static translate-y-0 ml-2" />
           </div>
         </Carousel>
+
+        <div className="mt-8 flex justify-center">
+          <Button 
+            onClick={handleDownload}
+            className="gap-2"
+            variant="outline"
+          >
+            <Download className="h-4 w-4" />
+            Download Full Deck
+          </Button>
+        </div>
       </div>
     </div>
   );
