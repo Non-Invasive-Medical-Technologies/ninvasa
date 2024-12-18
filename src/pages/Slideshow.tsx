@@ -115,70 +115,84 @@ const Slideshow = () => {
   const { toast } = useToast();
 
   const handleDownload = () => {
-    // For now, show a toast notification since the PDF is not ready
     toast({
       title: "Coming Soon",
       description: "The presentation deck will be available for download shortly.",
       duration: 3000,
     });
-
-    // Log for debugging
     console.log('Download deck requested - PDF not yet available');
   };
 
   return (
-    <div className="container mx-auto py-10 px-4">
-      <div className="max-w-6xl mx-auto">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-          setApi={(api) => {
-            if (api) {
-              api.on("select", () => {
-                setCurrentSlide(api.selectedScrollSnap());
-                console.log("Current slide:", api.selectedScrollSnap());
-              });
-            }
-          }}
-        >
-          <CarouselContent>
-            {slides.map((slide) => (
-              <CarouselItem key={slide.id}>
-                <Card className="border-none">
-                  <CardContent className="p-6">
-                    <div className="mb-6">
-                      <div className="text-sm text-medical-600 font-medium mb-2">
-                        {slide.section}
-                      </div>
-                      <h2 className="text-2xl font-bold mb-6">{slide.title}</h2>
-                    </div>
-                    {slide.component}
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex items-center justify-center mt-4">
-            <CarouselPrevious className="relative static translate-y-0 mr-2" />
-            <div className="mx-4 text-sm text-gray-500">
-              {currentSlide + 1} / {slides.length}
-            </div>
-            <CarouselNext className="relative static translate-y-0 ml-2" />
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-medical-600 to-medical-800 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl font-bold mb-4">
+              Interactive Presentation Deck
+            </h1>
+            <p className="text-xl opacity-90">
+              Explore our comprehensive business overview, market analysis, and technology innovations
+            </p>
           </div>
-        </Carousel>
+        </div>
+      </div>
 
-        <div className="mt-8 flex justify-center">
-          <Button 
-            onClick={handleDownload}
-            className="gap-2"
-            variant="outline"
+      {/* Slideshow Content */}
+      <div className="container mx-auto py-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+            setApi={(api) => {
+              if (api) {
+                api.on("select", () => {
+                  setCurrentSlide(api.selectedScrollSnap());
+                  console.log("Current slide:", api.selectedScrollSnap());
+                });
+              }
+            }}
           >
-            <Download className="h-4 w-4" />
-            Download Full Deck
-          </Button>
+            <CarouselContent>
+              {slides.map((slide) => (
+                <CarouselItem key={slide.id}>
+                  <Card className="border-none">
+                    <CardContent className="p-6">
+                      <div className="mb-6">
+                        <div className="text-sm text-medical-600 font-medium mb-2">
+                          {slide.section}
+                        </div>
+                        <h2 className="text-2xl font-bold mb-6">{slide.title}</h2>
+                      </div>
+                      {slide.component}
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex items-center justify-center mt-4">
+              <CarouselPrevious className="relative static translate-y-0 mr-2" />
+              <div className="mx-4 text-sm text-gray-500">
+                {currentSlide + 1} / {slides.length}
+              </div>
+              <CarouselNext className="relative static translate-y-0 ml-2" />
+            </div>
+          </Carousel>
+
+          <div className="mt-8 flex justify-center">
+            <Button 
+              onClick={handleDownload}
+              className="gap-2"
+              variant="outline"
+            >
+              <Download className="h-4 w-4" />
+              Download Full Deck
+            </Button>
+          </div>
         </div>
       </div>
     </div>
