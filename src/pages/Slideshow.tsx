@@ -7,68 +7,111 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import EnhancedPitchDeck from '@/components/business/EnhancedPitchDeck';
+import CompetitionAnalysis from '@/components/competition/CompetitionAnalysis';
+import CompetitorMatrix from '@/components/competition/CompetitorMatrix';
+import { AnimatedNumber } from '@/components/business/AnimatedNumber';
+import { Button } from '@/components/ui/button';
+import { Download } from 'lucide-react';
 
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-    title: "Advanced Healthcare Solutions",
-    description: "Revolutionizing medical diagnostics with cutting-edge technology."
+    section: "Executive Overview",
+    title: "Revolutionizing Healthcare Diagnostics",
+    component: <EnhancedPitchDeck />,
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    title: "Non-Invasive Technology",
-    description: "Providing accurate results without invasive procedures."
+    section: "Company Overview",
+    title: "Our Technology Platforms",
+    component: (
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold">ANESA & KOLIBRI Platforms</h2>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="p-6 bg-medical-50 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">ANESA Platform</h3>
+            <ul className="space-y-2">
+              <li>136+ health parameters</li>
+              <li>6-12 minute screening</li>
+              <li>Non-invasive technology</li>
+            </ul>
+          </div>
+          <div className="p-6 bg-medical-50 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">KOLIBRI Platform</h3>
+            <ul className="space-y-2">
+              <li>40+ blood parameters</li>
+              <li>2-5 minute analysis</li>
+              <li>Real-time monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    title: "AI-Powered Analytics",
-    description: "Leveraging artificial intelligence for precise diagnostics."
+    section: "Market Analysis",
+    title: "Market Opportunity",
+    component: (
+      <div className="space-y-6">
+        <div className="grid grid-cols-2 gap-6">
+          <div className="p-6 bg-medical-50 rounded-lg text-center">
+            <h3 className="text-xl font-bold mb-4">Total Addressable Market</h3>
+            <div className="text-4xl font-bold text-medical-600">
+              <AnimatedNumber value={50} prefix="$" suffix="B" />
+            </div>
+          </div>
+          <div className="p-6 bg-medical-50 rounded-lg text-center">
+            <h3 className="text-xl font-bold mb-4">CAGR</h3>
+            <div className="text-4xl font-bold text-medical-600">
+              <AnimatedNumber value={22} suffix="%" />
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    title: "Real-Time Monitoring",
-    description: "Continuous health tracking for better patient care."
+    section: "Competition",
+    title: "Competitive Landscape",
+    component: <CompetitionAnalysis />,
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    title: "Data Security",
-    description: "Ensuring patient data privacy and security."
+    section: "Market Position",
+    title: "Competitive Matrix",
+    component: <CompetitorMatrix />,
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    title: "Global Reach",
-    description: "Expanding healthcare access worldwide."
+    section: "Investment",
+    title: "Investment Opportunity",
+    component: (
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold">Investment Details</h2>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="p-6 bg-medical-50 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Funding Required</h3>
+            <div className="text-4xl font-bold text-medical-600">
+              <AnimatedNumber value={10} prefix="$" suffix="M" />
+            </div>
+          </div>
+          <div className="p-6 bg-medical-50 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Expected ROI</h3>
+            <div className="text-4xl font-bold text-medical-600">
+              <AnimatedNumber value={300} suffix="%" duration={1200} />
+            </div>
+          </div>
+        </div>
+        <Button className="mt-4" variant="outline">
+          <Download className="mr-2 h-4 w-4" />
+          Download Full Deck
+        </Button>
+      </div>
+    ),
   },
-  {
-    id: 7,
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
-    title: "Innovation",
-    description: "Pushing boundaries in medical technology."
-  },
-  {
-    id: 8,
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-    title: "Digital Health",
-    description: "Transforming healthcare delivery through digital solutions."
-  },
-  {
-    id: 9,
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    title: "Future of Healthcare",
-    description: "Shaping the next generation of medical diagnostics."
-  },
-  {
-    id: 10,
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    title: "Research & Development",
-    description: "Continuous innovation in healthcare technology."
-  }
 ];
 
 const Slideshow = () => {
@@ -76,7 +119,7 @@ const Slideshow = () => {
 
   return (
     <div className="container mx-auto py-10 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <Carousel
           opts={{
             align: "start",
@@ -87,21 +130,23 @@ const Slideshow = () => {
             if (api) {
               api.on("select", () => {
                 setCurrentSlide(api.selectedScrollSnap());
-                console.log("Selected slide:", api.selectedScrollSnap());
+                console.log("Current slide:", api.selectedScrollSnap());
               });
             }
           }}
         >
           <CarouselContent>
-            {slides.map((slide, index) => (
+            {slides.map((slide) => (
               <CarouselItem key={slide.id}>
                 <Card className="border-none">
-                  <CardContent className="flex aspect-video items-center justify-center p-0">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
+                  <CardContent className="p-6">
+                    <div className="mb-6">
+                      <div className="text-sm text-medical-600 font-medium mb-2">
+                        {slide.section}
+                      </div>
+                      <h2 className="text-2xl font-bold mb-6">{slide.title}</h2>
+                    </div>
+                    {slide.component}
                   </CardContent>
                 </Card>
               </CarouselItem>
@@ -109,18 +154,12 @@ const Slideshow = () => {
           </CarouselContent>
           <div className="flex items-center justify-center mt-4">
             <CarouselPrevious className="relative static translate-y-0 mr-2" />
+            <div className="mx-4 text-sm text-gray-500">
+              {currentSlide + 1} / {slides.length}
+            </div>
             <CarouselNext className="relative static translate-y-0 ml-2" />
           </div>
         </Carousel>
-
-        <div className="mt-8 text-center animate-fade-in">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            {slides[currentSlide].title}
-          </h2>
-          <p className="text-gray-600 text-lg">
-            {slides[currentSlide].description}
-          </p>
-        </div>
       </div>
     </div>
   );
