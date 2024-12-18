@@ -3,6 +3,7 @@ import CompetitionAnalysis from '@/components/competition/CompetitionAnalysis';
 import CompetitorMatrix from '@/components/competition/CompetitorMatrix';
 import { AnimatedNumber } from '@/components/business/AnimatedNumber';
 import BusinessModelSection from '@/components/business/BusinessModelSection';
+import MarketVerticalsSection from '@/components/business/MarketVerticalsSection';
 import GCCMarketAnalysis from '@/components/business/GCCMarketAnalysis';
 import ROICalculator from '@/components/business/ROICalculator';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
@@ -24,6 +25,7 @@ export const slides = [
       <div className="space-y-6">
         <PatentTechnologySection />
         <BusinessModelSection />
+        <MarketVerticalsSection />
       </div>
     ),
   },
