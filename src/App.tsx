@@ -15,6 +15,7 @@ import Download from "./pages/Download";
 import BioPromin from "./components/about/BioPromin";
 import Team from "./pages/Team";
 import Slideshow from "./pages/Slideshow";
+import Competition from "./pages/Competition";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="business" element={<Business />} />
         <Route path="investment" element={<Investment />} />
         <Route path="strategy" element={<Strategy />} />
+        <Route path="competition" element={<Competition />} />
         <Route path="download" element={<Download />} />
         <Route path="slideshow" element={<Slideshow />} />
       </Route>
