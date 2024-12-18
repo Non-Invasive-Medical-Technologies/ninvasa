@@ -9,9 +9,6 @@ const SlideshowHero = () => {
           <h1 className="text-4xl md:text-5xl font-bold">
             Revolutionizing Healthcare Diagnostics
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold mt-12">
-            Pioneering the Future of Healthcare
-          </h2>
           <p className="text-xl opacity-90">
             Non-Invasive Medical Technologies
           </p>
