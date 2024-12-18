@@ -19,22 +19,7 @@ const slides = [
     id: 1,
     section: "Executive Overview",
     title: "Revolutionizing Healthcare Diagnostics",
-    component: (
-      <div className="space-y-8">
-        {/* Cover Slide */}
-        <div className="bg-gradient-to-r from-medical-600 to-medical-800 text-white p-8 rounded-lg">
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl font-bold">Pioneering the Future of Healthcare</h1>
-            <p className="text-xl">Non-Invasive Medical Technologies</p>
-            <div className="flex justify-center space-x-8 pt-8">
-              <img src="/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png" alt="BL Medica Logo" className="h-16" />
-              <img src="/lovable-uploads/d1e24c32-9340-4528-8f24-f221be5a95a3.png" alt="Biopromin Logo" className="h-16" />
-            </div>
-          </div>
-        </div>
-        <EnhancedPitchDeck />
-      </div>
-    ),
+    component: <EnhancedPitchDeck />,
   },
   {
     id: 2,
