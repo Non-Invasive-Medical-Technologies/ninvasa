@@ -7,7 +7,7 @@ interface AnimatedNumberProps {
   duration?: number;
 }
 
-const AnimatedNumber = ({ value, prefix = '', suffix = '', duration = 800 }: AnimatedNumberProps) => {
+export const AnimatedNumber = ({ value, prefix = '', suffix = '', duration = 800 }: AnimatedNumberProps) => {
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
