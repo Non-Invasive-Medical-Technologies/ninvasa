@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface AnimatedNumberProps {
   value: number;
@@ -7,38 +7,43 @@ interface AnimatedNumberProps {
   duration?: number;
 }
 
-export const AnimatedNumber = ({ value, prefix = '', suffix = '', duration = 800 }: AnimatedNumberProps) => {
+export const AnimatedNumber: React.FC<AnimatedNumberProps> = ({ 
+  value, 
+  prefix = '', 
+  suffix = '', 
+  duration = 800 
+}) => {
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
-    const startTime = Date.now();
-    const startValue = displayValue;
-    const endValue = Number(value);
-    
-    const animate = () => {
-      const now = Date.now();
-      const elapsed = now - startTime;
+    let startTime: number;
+    let animationFrame: number;
+
+    const updateValue = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
       
-      if (elapsed < duration) {
-        const progress = elapsed / duration;
-        const currentValue = startValue + (endValue - startValue) * progress;
-        setDisplayValue(currentValue);
-        requestAnimationFrame(animate);
-      } else {
-        setDisplayValue(endValue);
+      setDisplayValue(Math.floor(percentage * value));
+
+      if (percentage < 1) {
+        animationFrame = requestAnimationFrame(updateValue);
       }
     };
-    
-    requestAnimationFrame(animate);
+
+    animationFrame = requestAnimationFrame(updateValue);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
   }, [value, duration]);
 
   return (
     <span>
       {prefix}
-      {displayValue.toLocaleString(undefined, { 
-        maximumFractionDigits: 0,
-        minimumFractionDigits: 0 
-      })}
+      {displayValue}
       {suffix}
     </span>
   );
