@@ -27,19 +27,19 @@ import {
 } from 'recharts';
 
 const establishedCompanies = [
-  { name: 'BL+Medica (ANESA)', marketShare: 20, techSuperiority: 10, revenue: 25, innovation: 10, customerSatisfaction: 9, pricing: 6, color: '#003f5c' },
-  { name: 'Abbott Laboratories', marketShare: 15, techSuperiority: 8, revenue: 43000, innovation: 8, customerSatisfaction: 9, pricing: 7, color: '#2f4b7c' },
-  { name: 'Siemens Healthineers', marketShare: 12, techSuperiority: 9, revenue: 20000, innovation: 9, customerSatisfaction: 8, pricing: 6, color: '#665191' },
-  { name: 'Roche Diagnostics', marketShare: 7, techSuperiority: 8, revenue: 11000, innovation: 6, customerSatisfaction: 7, pricing: 5, color: '#a05195' },
-  { name: 'Philips Healthcare', marketShare: 6, techSuperiority: 9, revenue: 19000, innovation: 9, customerSatisfaction: 8, pricing: 6, color: '#d45087' },
+  { name: 'BL+Medica (ANESA)', marketShare: 20, techSuperiority: 10, revenue: 25, innovation: 10, customerSatisfaction: 9, pricing: 6, color: '#0c4a6e' },
+  { name: 'Abbott Laboratories', marketShare: 15, techSuperiority: 8, revenue: 43000, innovation: 8, customerSatisfaction: 9, pricing: 7, color: '#075985' },
+  { name: 'Siemens Healthineers', marketShare: 12, techSuperiority: 9, revenue: 20000, innovation: 9, customerSatisfaction: 8, pricing: 6, color: '#0369a1' },
+  { name: 'Roche Diagnostics', marketShare: 7, techSuperiority: 8, revenue: 11000, innovation: 6, customerSatisfaction: 7, pricing: 5, color: '#0284c7' },
+  { name: 'Philips Healthcare', marketShare: 6, techSuperiority: 9, revenue: 19000, innovation: 9, customerSatisfaction: 8, pricing: 6, color: '#0ea5e9' },
 ];
 
 const startups = [
-  { name: 'GRAIL, Inc.', marketShare: 3, techSuperiority: 9, revenue: 200, innovation: 10, customerSatisfaction: 8, pricing: 8, color: '#f95d6a' },
-  { name: 'Everlywell', marketShare: 4, techSuperiority: 8, revenue: 60, innovation: 8, customerSatisfaction: 9, pricing: 5, color: '#ff7c43' },
-  { name: 'Thryve', marketShare: 2, techSuperiority: 7, revenue: 10, innovation: 7, customerSatisfaction: 8, pricing: 5, color: '#ffa600' },
-  { name: 'Biocept', marketShare: 5, techSuperiority: 8, revenue: 20, innovation: 8, customerSatisfaction: 7, pricing: 8, color: '#488f31' },
-  { name: 'Livongo', marketShare: 3, techSuperiority: 9, revenue: 150, innovation: 9, customerSatisfaction: 9, pricing: 8, color: '#23719f' },
+  { name: 'GRAIL, Inc.', marketShare: 3, techSuperiority: 9, revenue: 200, innovation: 10, customerSatisfaction: 8, pricing: 8, color: '#38bdf8' },
+  { name: 'Everlywell', marketShare: 4, techSuperiority: 8, revenue: 60, innovation: 8, customerSatisfaction: 9, pricing: 5, color: '#7dd3fc' },
+  { name: 'Thryve', marketShare: 2, techSuperiority: 7, revenue: 10, innovation: 7, customerSatisfaction: 8, pricing: 5, color: '#bae6fd' },
+  { name: 'Biocept', marketShare: 5, techSuperiority: 8, revenue: 20, innovation: 8, customerSatisfaction: 7, pricing: 8, color: '#e0f2fe' },
+  { name: 'Livongo', marketShare: 3, techSuperiority: 9, revenue: 150, innovation: 9, customerSatisfaction: 9, pricing: 8, color: '#f0f9ff' },
 ];
 
 const allCompanies = [...establishedCompanies, ...startups];
@@ -80,13 +80,13 @@ const CompetitorMatrix = () => {
         <TabsContent value="innovation">
           <ResponsiveContainer width="100%" height={400}>
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-              <CartesianGrid />
-              <XAxis type="number" dataKey="innovation" name="Innovation" domain={[0, 10]} />
-              <YAxis type="number" dataKey="marketShare" name="Market Share" domain={[0, 25]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e0f2fe" />
+              <XAxis type="number" dataKey="innovation" name="Innovation" domain={[0, 10]} stroke="#0ea5e9" />
+              <YAxis type="number" dataKey="marketShare" name="Market Share" domain={[0, 25]} stroke="#0ea5e9" />
               <ZAxis range={[100, 100]} />
               <Tooltip cursor={{ strokeDasharray: '3 3' }} />
               <Legend />
-              <Scatter data={allCompanies} fill="#8884d8">
+              <Scatter data={allCompanies} fill="#0ea5e9">
                 <LabelList dataKey="name" position="top" />
               </Scatter>
             </ScatterChart>
@@ -96,13 +96,13 @@ const CompetitorMatrix = () => {
         <TabsContent value="customerSatisfaction">
           <ResponsiveContainer width="100%" height={400}>
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-              <CartesianGrid />
-              <XAxis type="number" dataKey="customerSatisfaction" name="Customer Satisfaction" domain={[0, 10]} />
-              <YAxis type="number" dataKey="techSuperiority" name="Tech Superiority" domain={[0, 10]} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e0f2fe" />
+              <XAxis type="number" dataKey="customerSatisfaction" name="Customer Satisfaction" domain={[0, 10]} stroke="#0ea5e9" />
+              <YAxis type="number" dataKey="techSuperiority" name="Tech Superiority" domain={[0, 10]} stroke="#0ea5e9" />
               <ZAxis range={[100, 100]} />
               <Tooltip cursor={{ strokeDasharray: '3 3' }} />
               <Legend />
-              <Scatter data={allCompanies} fill="#8884d8">
+              <Scatter data={allCompanies} fill="#0ea5e9">
                 <LabelList dataKey="name" position="top" />
               </Scatter>
             </ScatterChart>
