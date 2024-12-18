@@ -62,23 +62,22 @@ export const slides = [
   {
     id: 4,
     section: "Competition",
-    title: "Competitive Landscape",
-    component: <CompetitionAnalysis />,
+    title: "Competitive Analysis",
+    component: (
+      <div className="space-y-8">
+        <CompetitionAnalysis />
+        <CompetitorMatrix />
+      </div>
+    ),
   },
   {
     id: 5,
-    section: "Market Position",
-    title: "Competitive Matrix",
-    component: <CompetitorMatrix />,
-  },
-  {
-    id: 6,
     section: "Strategic Partnerships",
     title: "Key Partnerships & Collaborations",
     component: <StrategicPartnership />,
   },
   {
-    id: 7,
+    id: 6,
     section: "Investment",
     title: "Investment Opportunity",
     component: (
@@ -102,7 +101,7 @@ export const slides = [
     ),
   },
   {
-    id: 8,
+    id: 7,
     section: "Investment Models",
     title: "Funding Options & Allocation",
     component: <InvestmentAskSection />,
