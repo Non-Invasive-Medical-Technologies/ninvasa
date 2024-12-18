@@ -20,6 +20,7 @@ export const slides = [
       <div className="space-y-6">
         <EnhancedPitchDeck />
         <PatentTechnologySection />
+        <StrategicPartnership />
       </div>
     ),
   },
@@ -72,12 +73,6 @@ export const slides = [
   },
   {
     id: 5,
-    section: "Strategic Partnerships",
-    title: "Key Partnerships & Collaborations",
-    component: <StrategicPartnership />,
-  },
-  {
-    id: 6,
     section: "Investment",
     title: "Investment Opportunity",
     component: (
@@ -101,7 +96,7 @@ export const slides = [
     ),
   },
   {
-    id: 7,
+    id: 6,
     section: "Investment Models",
     title: "Funding Options & Allocation",
     component: <InvestmentAskSection />,
