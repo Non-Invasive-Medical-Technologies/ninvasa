@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import IntroComponent from "@/components/business/IntroComponent";
+import EnhancedPitchDeck from "@/components/business/EnhancedPitchDeck";
 import PatentTechnologySection from "@/components/business/PatentTechnologySection";
 
 const Index = () => {
@@ -12,7 +12,7 @@ const Index = () => {
           transition={{ duration: 0.5 }}
           className="space-y-12"
         >
-          <IntroComponent />
+          <EnhancedPitchDeck />
           <PatentTechnologySection />
         </motion.div>
       </div>
