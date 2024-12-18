@@ -7,6 +7,7 @@ import GCCMarketAnalysis from '@/components/business/GCCMarketAnalysis';
 import ROICalculator from '@/components/business/ROICalculator';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
 import StrategicPartnership from '@/components/business/StrategicPartnership';
+import InvestmentAskSection from '@/components/investment/InvestmentAskSection';
 
 export const slides = [
   {
@@ -91,5 +92,11 @@ export const slides = [
         </div>
       </div>
     ),
+  },
+  {
+    id: 8,
+    section: "Investment Models",
+    title: "Funding Options & Allocation",
+    component: <InvestmentAskSection />,
   },
 ];
