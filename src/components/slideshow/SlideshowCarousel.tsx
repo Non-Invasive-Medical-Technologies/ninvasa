@@ -50,11 +50,11 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
           ))}
         </CarouselContent>
         
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4">
-          <CarouselPrevious className="h-12 w-12 border-2 border-medical-600" />
+        <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50">
+          <CarouselPrevious className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
         </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4">
-          <CarouselNext className="h-12 w-12 border-2 border-medical-600" />
+        <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50">
+          <CarouselNext className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
         </div>
       </Carousel>
       
