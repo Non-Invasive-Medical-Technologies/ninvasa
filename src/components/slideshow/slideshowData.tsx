@@ -23,7 +23,6 @@ export const slides = [
       <div className="space-y-8">
         <PatentTechnologySection />
         <StrategicPartnership />
-        <AnimatedMarketHeatmap />
       </div>
     ),
   },
@@ -43,7 +42,12 @@ export const slides = [
     id: 5,
     section: "Business Model",
     title: "Our Business Model",
-    component: <BusinessModelSection />,
+    component: (
+      <div className="space-y-8">
+        <BusinessModelSection />
+        <AnimatedMarketHeatmap />
+      </div>
+    ),
   },
   {
     id: 6,
