@@ -16,7 +16,7 @@ interface SlideshowCarouselProps {
 
 const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselProps) => {
   return (
-    <div className="relative">
+    <div className="relative px-16"> {/* Added padding to make room for arrows */}
       <Carousel
         opts={{
           align: "start",
@@ -50,10 +50,10 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
           ))}
         </CarouselContent>
         
-        <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2">
           <CarouselPrevious className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
         </div>
-        <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2">
           <CarouselNext className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
         </div>
       </Carousel>
