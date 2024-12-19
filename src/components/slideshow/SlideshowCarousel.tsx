@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { slides } from './slideshowData';
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Import Lucide icons
 
 interface SlideshowCarouselProps {
   currentSlide: number;
@@ -39,14 +40,18 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
                 <CardContent className="p-6">
                   {/* Top Navigation Arrows */}
                   <div className="flex justify-between mb-6">
-                    <CarouselPrevious className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                    <CarouselPrevious className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white relative static">
+                      <ChevronLeft className="h-6 w-6" />
+                    </CarouselPrevious>
                     <div>
                       <div className="text-sm text-medical-600 font-medium mb-2">
                         {slide.section}
                       </div>
                       <h2 className="text-2xl font-bold">{slide.title}</h2>
                     </div>
-                    <CarouselNext className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                    <CarouselNext className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white relative static">
+                      <ChevronRight className="h-6 w-6" />
+                    </CarouselNext>
                   </div>
 
                   {/* Slide Content */}
@@ -56,11 +61,15 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
 
                   {/* Bottom Navigation Arrows */}
                   <div className="flex justify-between items-center mt-6">
-                    <CarouselPrevious className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                    <CarouselPrevious className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white relative static">
+                      <ChevronLeft className="h-6 w-6" />
+                    </CarouselPrevious>
                     <div className="text-sm text-gray-500">
                       {currentSlide + 1} / {slides.length}
                     </div>
-                    <CarouselNext className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                    <CarouselNext className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white relative static">
+                      <ChevronRight className="h-6 w-6" />
+                    </CarouselNext>
                   </div>
                 </CardContent>
               </Card>
