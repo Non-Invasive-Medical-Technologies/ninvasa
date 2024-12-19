@@ -37,31 +37,37 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
             <CarouselItem key={slide.id} className="relative">
               <Card className="border-none">
                 <CardContent className="p-6">
-                  <div className="mb-6">
-                    <div className="text-sm text-medical-600 font-medium mb-2">
-                      {slide.section}
+                  {/* Top Navigation Arrows */}
+                  <div className="flex justify-between mb-6">
+                    <CarouselPrevious className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                    <div>
+                      <div className="text-sm text-medical-600 font-medium mb-2">
+                        {slide.section}
+                      </div>
+                      <h2 className="text-2xl font-bold">{slide.title}</h2>
                     </div>
-                    <h2 className="text-2xl font-bold mb-6">{slide.title}</h2>
+                    <CarouselNext className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
                   </div>
-                  {slide.component}
+
+                  {/* Slide Content */}
+                  <div className="min-h-[600px] max-h-[800px] overflow-y-auto">
+                    {slide.component}
+                  </div>
+
+                  {/* Bottom Navigation Arrows */}
+                  <div className="flex justify-between items-center mt-6">
+                    <CarouselPrevious className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                    <div className="text-sm text-gray-500">
+                      {currentSlide + 1} / {slides.length}
+                    </div>
+                    <CarouselNext className="h-10 w-10 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+                  </div>
                 </CardContent>
               </Card>
-              
-              {/* Navigation arrows positioned relative to each slide */}
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16">
-                <CarouselPrevious className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
-              </div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16">
-                <CarouselNext className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
-              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-      
-      <div className="text-center mt-4 text-sm text-gray-500">
-        {currentSlide + 1} / {slides.length}
-      </div>
     </div>
   );
 };
