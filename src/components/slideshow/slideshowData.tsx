@@ -18,7 +18,12 @@ export const slides = [
     title: "Revolutionizing Healthcare Diagnostics",
     component: (
       <div className="space-y-6">
-        <EnhancedPitchDeck />
+        <div className="p-6 bg-medical-50 rounded-lg">
+          <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+          <p className="text-gray-700">
+            Transforming healthcare through innovative diagnostic solutions
+          </p>
+        </div>
         <PatentTechnologySection />
         <StrategicPartnership />
       </div>
