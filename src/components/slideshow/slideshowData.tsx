@@ -10,6 +10,7 @@ import ROICalculator from '@/components/business/ROICalculator';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
 import StrategicPartnership from '@/components/business/StrategicPartnership';
 import InvestmentAskSection from '@/components/investment/InvestmentAskSection';
+import { Star, Circle, Diamond, Triangle, Heart, Square } from 'lucide-react';
 
 export const slides = [
   {
@@ -18,6 +19,9 @@ export const slides = [
     title: "Revolutionizing Healthcare Diagnostics",
     component: (
       <div className="space-y-6">
+        <div className="flex justify-center mb-8">
+          <Star className="w-16 h-16 text-medical-600" />
+        </div>
         <EnhancedPitchDeck />
         <PatentTechnologySection />
         <StrategicPartnership />
@@ -30,6 +34,9 @@ export const slides = [
     title: "Our Business Model",
     component: (
       <div className="space-y-6">
+        <div className="flex justify-center mb-8">
+          <Circle className="w-16 h-16 text-medical-600" />
+        </div>
         <BusinessModelSection />
         <MarketVerticalsSection />
       </div>
@@ -41,6 +48,9 @@ export const slides = [
     title: "Market Opportunity",
     component: (
       <div className="space-y-8">
+        <div className="flex justify-center mb-8">
+          <Diamond className="w-16 h-16 text-medical-600" />
+        </div>
         <GCCMarketAnalysis />
         <AnimatedMarketHeatmap />
         <div className="grid grid-cols-2 gap-6">
@@ -66,6 +76,9 @@ export const slides = [
     title: "Competitive Analysis",
     component: (
       <div className="space-y-8">
+        <div className="flex justify-center mb-8">
+          <Triangle className="w-16 h-16 text-medical-600" />
+        </div>
         <CompetitionAnalysis />
         <CompetitorMatrix />
       </div>
@@ -77,6 +90,9 @@ export const slides = [
     title: "Investment Opportunity",
     component: (
       <div className="space-y-6">
+        <div className="flex justify-center mb-8">
+          <Heart className="w-16 h-16 text-medical-600" />
+        </div>
         <ROICalculator />
         <div className="grid grid-cols-2 gap-6">
           <div className="p-6 bg-medical-50 rounded-lg">
@@ -99,6 +115,13 @@ export const slides = [
     id: 6,
     section: "Investment Models",
     title: "Funding Options & Allocation",
-    component: <InvestmentAskSection />,
+    component: (
+      <div>
+        <div className="flex justify-center mb-8">
+          <Square className="w-16 h-16 text-medical-600" />
+        </div>
+        <InvestmentAskSection />
+      </div>
+    ),
   },
 ];
