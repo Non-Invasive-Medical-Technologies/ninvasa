@@ -2,7 +2,7 @@ import React from 'react';
 
 const SlideshowHero = () => {
   return (
-    <div className="bg-gradient-to-r from-medical-600 to-medical-800 py-16 relative">
+    <div className="bg-gradient-to-r from-medical-600 to-medical-800 py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center text-white space-y-6">
           <div className="text-medical-100 font-medium">Executive Overview</div>
