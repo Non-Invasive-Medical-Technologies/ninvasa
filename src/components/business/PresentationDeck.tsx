@@ -21,7 +21,7 @@ const PresentationDeck = () => {
       {/* Cover Slide */}
       <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-12 rounded-lg">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h1 className="text-4xl font-bold">Revolutionary Healthcare Innovation</h1>
+          <h1 className="text-4xl font-bold">Pioneering the Future of Healthcare</h1>
           <p className="text-xl">Non-Invasive Medical Technologies</p>
           <div className="flex justify-center items-center space-x-12 pt-8">
             <div className="text-center">
