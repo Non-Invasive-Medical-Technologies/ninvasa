@@ -6,6 +6,7 @@ import BusinessModelSection from '@/components/business/BusinessModelSection';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
 import StrategicPartnership from '@/components/business/StrategicPartnership';
 import ROICalculator from '@/components/business/ROICalculator';
+import AnimatedMarketHeatmap from '@/components/business/AnimatedMarketHeatmap';
 
 export const slides = [
   {
@@ -22,6 +23,7 @@ export const slides = [
       <div className="space-y-8">
         <PatentTechnologySection />
         <StrategicPartnership />
+        <AnimatedMarketHeatmap />
       </div>
     ),
   },
