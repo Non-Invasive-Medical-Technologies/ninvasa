@@ -158,8 +158,8 @@ export const slides = [
               <div className="p-6 bg-medical-50 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Private Equity</h3>
                 <ul className="space-y-2">
-                  <li>Minimum investment: $5M</li>
-                  <li>Equity stake: 15-25%</li>
+                  <li>Minimum investment: $500K-1M</li>
+                  <li>Equity stake: 5-10%</li>
                   <li>Board representation</li>
                   <li>Strategic partnership opportunities</li>
                 </ul>
@@ -167,16 +167,16 @@ export const slides = [
               <div className="p-6 bg-medical-50 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Venture Debt</h3>
                 <ul className="space-y-2">
-                  <li>Loan amount: $2-5M</li>
+                  <li>Loan amount: $500K-1M</li>
                   <li>Term: 36-48 months</li>
                   <li>Interest rate: 8-12%</li>
                   <li>Warrants: 5-10%</li>
                 </ul>
               </div>
               <div className="p-6 bg-medical-50 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Republic Note</h3>
+                <h3 className="text-xl font-bold mb-4">SAFE Note</h3>
                 <ul className="space-y-2">
-                  <li>Investment range: $100K-1M</li>
+                  <li>Investment range: $1M-1.5M</li>
                   <li>Revenue share: 3-5%</li>
                   <li>Quarterly distributions</li>
                   <li>No equity dilution</li>
