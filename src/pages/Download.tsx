@@ -23,6 +23,7 @@ const formSchema = z.object({
       message: "Please enter a valid email domain",
     }),
   company: z.string().min(2, "Company name must be at least 2 characters"),
+  role: z.string().min(2, "Role must be at least 2 characters"),
 });
 
 type DownloadFormData = z.infer<typeof formSchema>;
@@ -35,6 +36,7 @@ const Download = () => {
       fullName: "",
       email: "",
       company: "",
+      role: "",
     },
   });
 
@@ -48,16 +50,16 @@ const Download = () => {
       
       toast({
         title: "Success!",
-        description: "Check your email for the business plan. It may take a few minutes to arrive.",
+        description: "Check your email for the presentation deck. It may take a few minutes to arrive.",
         duration: 5000,
       });
       
       // Simulate download start
       setTimeout(() => {
-        const dummyFileUrl = '/sample-business-plan.pdf';
+        const dummyFileUrl = '/sample-presentation.pdf';
         const link = document.createElement('a');
         link.href = dummyFileUrl;
-        link.download = 'Products-and-Services-Business-Plan.pdf';
+        link.download = 'BL-Medica-Presentation-Deck.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -77,9 +79,9 @@ const Download = () => {
       <div className="max-w-2xl mx-auto">
         <Card className="shadow-lg animate-fade-in">
           <CardHeader className="bg-gradient-to-r from-medical-600 to-medical-400 text-white space-y-2">
-            <h1 className="text-3xl font-bold">Download Business Plan</h1>
+            <h1 className="text-3xl font-bold">Download Presentation Deck</h1>
             <p className="text-lg opacity-90">
-              Get detailed insights into our market strategy, financial projections, and growth plans
+              Get detailed insights into our innovative medical technology solutions
             </p>
           </CardHeader>
           <CardContent className="p-8">
@@ -149,6 +151,27 @@ const Download = () => {
                   )}
                 />
 
+                <FormField
+                  control={form.control}
+                  name="role"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Job Title</FormLabel>
+                      <div className="relative">
+                        <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                        <FormControl>
+                          <Input
+                            placeholder="Director of Operations"
+                            className="pl-10"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </div>
+                    </FormItem>
+                  )}
+                />
+
                 <Button 
                   type="submit" 
                   className="w-full" 
@@ -163,7 +186,7 @@ const Download = () => {
                   ) : (
                     <>
                       <DownloadIcon className="mr-2 h-5 w-5" />
-                      Download Business Plan
+                      Download Presentation Deck
                     </>
                   )}
                 </Button>
