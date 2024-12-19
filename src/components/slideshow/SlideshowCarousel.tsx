@@ -16,46 +16,52 @@ interface SlideshowCarouselProps {
 
 const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselProps) => {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-        loop: true,
-      }}
-      className="w-full"
-      setApi={(api) => {
-        if (api) {
-          api.on("select", () => {
-            setCurrentSlide(api.selectedScrollSnap());
-            console.log("Current slide:", api.selectedScrollSnap());
-          });
-        }
-      }}
-    >
-      <CarouselContent>
-        {slides.map((slide) => (
-          <CarouselItem key={slide.id}>
-            <Card className="border-none">
-              <CardContent className="p-6">
-                <div className="mb-6">
-                  <div className="text-sm text-medical-600 font-medium mb-2">
-                    {slide.section}
+    <div className="relative">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+        setApi={(api) => {
+          if (api) {
+            api.on("select", () => {
+              setCurrentSlide(api.selectedScrollSnap());
+              console.log("Current slide:", api.selectedScrollSnap());
+            });
+          }
+        }}
+      >
+        <CarouselContent>
+          {slides.map((slide) => (
+            <CarouselItem key={slide.id}>
+              <Card className="border-none">
+                <CardContent className="p-6">
+                  <div className="mb-6">
+                    <div className="text-sm text-medical-600 font-medium mb-2">
+                      {slide.section}
+                    </div>
+                    <h2 className="text-2xl font-bold mb-6">{slide.title}</h2>
                   </div>
-                  <h2 className="text-2xl font-bold mb-6">{slide.title}</h2>
-                </div>
-                {slide.component}
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <div className="flex items-center justify-center mt-4">
-        <CarouselPrevious className="relative static translate-y-0 mr-2" />
-        <div className="mx-4 text-sm text-gray-500">
-          {currentSlide + 1} / {slides.length}
+                  {slide.component}
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4">
+          <CarouselPrevious className="h-12 w-12 border-2 border-medical-600" />
         </div>
-        <CarouselNext className="relative static translate-y-0 ml-2" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4">
+          <CarouselNext className="h-12 w-12 border-2 border-medical-600" />
+        </div>
+      </Carousel>
+      
+      <div className="text-center mt-4 text-sm text-gray-500">
+        {currentSlide + 1} / {slides.length}
       </div>
-    </Carousel>
+    </div>
   );
 };
 
