@@ -16,7 +16,7 @@ interface SlideshowCarouselProps {
 
 const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselProps) => {
   return (
-    <div className="relative px-16"> {/* Added padding to make room for arrows */}
+    <div className="relative"> 
       <Carousel
         opts={{
           align: "start",
@@ -34,7 +34,7 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
       >
         <CarouselContent>
           {slides.map((slide) => (
-            <CarouselItem key={slide.id}>
+            <CarouselItem key={slide.id} className="relative">
               <Card className="border-none">
                 <CardContent className="p-6">
                   <div className="mb-6">
@@ -46,16 +46,17 @@ const SlideshowCarousel = ({ currentSlide, setCurrentSlide }: SlideshowCarouselP
                   {slide.component}
                 </CardContent>
               </Card>
+              
+              {/* Navigation arrows positioned relative to each slide */}
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16">
+                <CarouselPrevious className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16">
+                <CarouselNext className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        
-        <div className="absolute left-0 top-1/2 -translate-y-1/2">
-          <CarouselPrevious className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
-        </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2">
-          <CarouselNext className="h-12 w-12 border-2 border-medical-600 bg-white/80 backdrop-blur-sm hover:bg-white" />
-        </div>
       </Carousel>
       
       <div className="text-center mt-4 text-sm text-gray-500">
