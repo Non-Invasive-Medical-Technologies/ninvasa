@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import InteractiveTimeline from '@/components/technology/InteractiveTimeline';
+import CompetitiveTable from '@/components/competition/CompetitiveTable';
 
 const Roadmap = () => {
   const timelineItems = [
@@ -61,6 +62,15 @@ const Roadmap = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-16"
+        >
+          <CompetitiveTable />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-12"
         >
           <Card>
