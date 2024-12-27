@@ -13,7 +13,6 @@ import Investment from "./pages/Investment";
 import Strategy from "./pages/Strategy";
 import Download from "./pages/Download";
 import BioPromin from "./components/about/BioPromin";
-import Team from "./pages/Team";
 import Slideshow from "./pages/Slideshow";
 import Competition from "./pages/Competition";
 
@@ -24,7 +23,6 @@ function App() {
         <Route index element={<Index />} />
         <Route path="about" element={<About />} />
         <Route path="about/biopromin" element={<BioPromin />} />
-        <Route path="about/team" element={<Team />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="anesa" element={<Anesa />} />
         <Route path="kolibri" element={<Kolibri />} />
@@ -33,10 +31,10 @@ function App() {
         <Route path="parameters" element={<Parameters />} />
         <Route path="business" element={<Business />} />
         <Route path="investment" element={<Investment />} />
+        <Route path="business/investment-slideshow" element={<Slideshow />} />
         <Route path="strategy" element={<Strategy />} />
         <Route path="competition" element={<Competition />} />
         <Route path="download" element={<Download />} />
-        <Route path="slideshow" element={<Slideshow />} />
       </Route>
     </Routes>
   );

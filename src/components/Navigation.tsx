@@ -15,7 +15,6 @@ const Navigation = () => {
     portfolio: [
       { href: "/anesa", label: "ANESA" },
       { href: "/kolibri", label: "KOLIBRI" },
-      { href: "/slideshow", label: "Slideshow" },
     ],
     technology: [
       { href: "/parameters", label: "Test Parameters" },
@@ -23,6 +22,7 @@ const Navigation = () => {
     ],
     business: [
       { href: "/investment", label: "Investment" },
+      { href: "/business/investment-slideshow", label: "Investment Slideshow" },
       { href: "/strategy", label: "Strategy" },
       { href: "/download", label: "Business Plan" },
     ],
@@ -34,7 +34,6 @@ const Navigation = () => {
 
   const aboutLinks: MenuItem[] = [
     { href: "/about", label: "About Us" },
-    { href: "/about/team", label: "Our Team" },
     { href: "/about/biopromin", label: "BioPromin" },
   ];
 
