@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 const Logo = () => {
   return (
     <Link to="/" className="flex items-center">
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#26652C] to-[#4EC989] bg-clip-text text-transparent">
-        Ninvasa
-      </span>
+      <img 
+        src="/lovable-uploads/1070924e-f453-4130-a2af-9f61b910e9b9.png" 
+        alt="Ninvasa Logo" 
+        className="h-8 w-auto"
+      />
     </Link>
   );
 };

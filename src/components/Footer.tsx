@@ -6,7 +6,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-medical-600 mb-4">Ninvasa</h3>
+            <Link to="/" className="inline-block mb-4">
+              <img 
+                src="/lovable-uploads/1070924e-f453-4130-a2af-9f61b910e9b9.png" 
+                alt="Ninvasa Logo" 
+                className="h-8 w-auto"
+              />
+            </Link>
             <p className="text-sm text-gray-600">
               Leading innovation in non-invasive diagnostic technologies
             </p>
