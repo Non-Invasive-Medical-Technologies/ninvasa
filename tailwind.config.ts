@@ -53,16 +53,16 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         medical: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#26652C",  // Updated to match logo green
-          600: "#1A4D1F",  // Darker shade
-          700: "#0F2E12",  // Even darker
-          800: "#081708",  // Very dark
-          900: "#040904",  // Almost black
+          50: "#f2fce2",  // Very light green
+          100: "#e0f2d1",  // Light green
+          200: "#c6e5b3",  // Pale green
+          300: "#a3d68c",  // Soft green
+          400: "#7fc865",  // Medium green
+          500: "#26652C",  // Logo green
+          600: "#1A4D1F",  // Darker green
+          700: "#0F2E12",  // Deep green
+          800: "#081708",  // Very dark green
+          900: "#040904",  // Almost black green
         },
       },
       borderRadius: {
