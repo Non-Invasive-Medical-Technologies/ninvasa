@@ -15,7 +15,6 @@ const Navigation = () => {
     portfolio: [
       { href: "/anesa", label: "ANESA" },
       { href: "/kolibri", label: "KOLIBRI" },
-      { href: "/slideshow", label: "Investment Slideshow" },
     ],
     technology: [
       { href: "/parameters", label: "Test Parameters" },
@@ -23,6 +22,7 @@ const Navigation = () => {
     ],
     business: [
       { href: "/investment", label: "Investment" },
+      { href: "/business/investment-slideshow", label: "Investment Slideshow" },
       { href: "/strategy", label: "Strategy" },
       { href: "/download", label: "Business Plan" },
     ],
