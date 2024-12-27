@@ -12,7 +12,7 @@ const MobileNav = ({ isOpen, menuGroups, mainLinks, aboutLinks, isActive, onLink
   };
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden pb-20">
       <div className="px-2 pt-2 pb-3 space-y-1">
         {mainLinks.map((link) => (
           <Link

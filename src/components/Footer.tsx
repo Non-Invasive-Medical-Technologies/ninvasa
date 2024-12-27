@@ -58,6 +58,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/business/onepager" className="text-sm text-gray-600 hover:text-medical-600">
+                  One Pager Summary
+                </Link>
+              </li>
+              <li>
                 <Link to="/strategy" className="text-sm text-gray-600 hover:text-medical-600">
                   Strategy
                 </Link>
