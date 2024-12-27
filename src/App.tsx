@@ -15,6 +15,7 @@ import Download from "./pages/Download";
 import BioPromin from "./components/about/BioPromin";
 import Slideshow from "./pages/Slideshow";
 import Competition from "./pages/Competition";
+import OnePager from "./pages/OnePager";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="technology/roadmap" element={<Roadmap />} />
         <Route path="parameters" element={<Parameters />} />
         <Route path="business" element={<Business />} />
+        <Route path="business/onepager" element={<OnePager />} />
         <Route path="investment" element={<Investment />} />
         <Route path="business/investment-slideshow" element={<Slideshow />} />
         <Route path="strategy" element={<Strategy />} />

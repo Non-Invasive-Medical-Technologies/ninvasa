@@ -23,6 +23,7 @@ const Navigation = () => {
     business: [
       { href: "/investment", label: "Investment" },
       { href: "/business/investment-slideshow", label: "Investment Slideshow" },
+      { href: "/business/onepager", label: "One Pager" },
       { href: "/strategy", label: "Strategy" },
       { href: "/download", label: "Business Plan" },
     ],
