@@ -1,81 +1,90 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageSquare, ArrowRight } from 'lucide-react';
+import { MessageSquare, ArrowRight, Globe, Star } from 'lucide-react';
 
 const HeroSection = () => {
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const device = document.querySelector('.device-model') as HTMLElement;
-      if (!device) return;
-      
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      const rotateX = (clientY / innerHeight - 0.5) * 20;
-      const rotateY = (clientX / innerWidth - 0.5) * 20;
-      
-      device.style.transform = `
-        perspective(1000px)
-        rotateX(${-rotateX}deg)
-        rotateY(${rotateY}deg)
-        scale3d(1.1, 1.1, 1.1)
-      `;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#F5F9F9] to-[#E0F2F1] overflow-hidden">
-      {/* Background Patterns */}
+      {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#8FD5CA] rounded-full filter blur-3xl opacity-20 animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#26652C] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#8FD5CA] rounded-full filter blur-3xl opacity-20 animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#26652C] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pt-32 pb-16">
+      {/* Content Container */}
+      <div className="container mx-auto px-4 pt-32 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="relative z-10 text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-              Rapid Non Invasive testing,{' '}
+          {/* Left Column - Text Content */}
+          <div className="relative z-10 space-y-8 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full shadow-sm">
+              <Star className="h-5 w-5 text-[#26652C]" />
+              <span className="text-sm font-medium">Leading Medical Innovation</span>
+            </div>
+            
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              Revolutionizing Healthcare with{' '}
               <span className="bg-gradient-to-r from-[#26652C] to-[#4EC989] bg-clip-text text-transparent">
-                Powered by patented technologies.
+                Non-Invasive Testing
               </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Professional-grade health monitoring powered by AI. Advanced sensors combined 
-              with intelligent analytics provide unprecedented insights into your health.
+            
+            <p className="text-lg text-gray-600 max-w-xl">
+              Our patented technology combines advanced sensors with AI-powered analytics 
+              to deliver unprecedented insights into your health, making professional-grade 
+              monitoring more accessible than ever.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="bg-gradient-to-r from-[#26652C] to-[#4EC989] text-white px-8 py-6 rounded-lg text-lg hover:opacity-90 transition-opacity">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-[#26652C] to-[#4EC989] text-white hover:opacity-90 transition-opacity"
+              >
                 Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2" />
               </Button>
-              <Button variant="outline" className="border-2 border-[#26652C] text-[#26652C] px-8 py-6 rounded-lg text-lg hover:bg-[#26652C] hover:text-white transition-colors">
+              
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-2 border-[#26652C] text-[#26652C] hover:bg-[#26652C] hover:text-white transition-colors"
+              >
                 Book Demo
-                <MessageSquare className="ml-2 h-5 w-5" />
+                <MessageSquare className="ml-2" />
               </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8">
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-[#26652C]">98%</div>
+                <div className="text-sm text-gray-600">Accuracy Rate</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-[#26652C]">24/7</div>
+                <div className="text-sm text-gray-600">Monitoring</div>
+              </div>
+              <div className="text-center lg:text-left hidden sm:block">
+                <div className="text-3xl font-bold text-[#26652C]">Global</div>
+                <div className="text-sm text-gray-600">Coverage</div>
+              </div>
             </div>
           </div>
 
-          {/* Device Display */}
-          <div className="relative z-10 flex justify-center">
-            <div 
-              className="device-model transition-transform duration-300 ease-out"
-              style={{
-                transformStyle: 'preserve-3d',
-                willChange: 'transform'
-              }}
-            >
-              {/* Status LED */}
-              <div 
-                className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#4EC989] animate-pulse"
-                style={{
-                  boxShadow: '0 0 8px #4EC989'
-                }}
-              />
+          {/* Right Column - Visual Element */}
+          <div className="relative z-10 hidden lg:flex justify-center items-center">
+            <div className="relative w-full max-w-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#26652C]/10 to-[#4EC989]/10 rounded-3xl transform rotate-3" />
+              <div className="relative bg-white/90 p-8 rounded-3xl shadow-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <Globe className="h-8 w-8 text-[#26652C]" />
+                  <h3 className="text-xl font-semibold">Global Health Innovation</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="h-2 bg-[#E0F2F1] rounded-full w-3/4" />
+                  <div className="h-2 bg-[#E0F2F1] rounded-full w-full" />
+                  <div className="h-2 bg-[#E0F2F1] rounded-full w-2/3" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
