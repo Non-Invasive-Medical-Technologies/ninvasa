@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const competitorData = [
   {
-    name: 'BL+Medica (ANESA)',
+    name: 'Ninvasa (ANESA)',
     marketShare: 20,
     tracxnScore: 65,
     fundingAmount: 25,

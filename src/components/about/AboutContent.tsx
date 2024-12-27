@@ -9,7 +9,7 @@ const AboutContent = () => {
         transition={{ delay: 0.2 }}
         className="text-lg leading-relaxed text-gray-700"
       >
-        BL+Medica, in partnership with BioPromin, spearheads the development of cutting-edge, non-invasive diagnostic technologies. Our flagship product, <span className="font-semibold text-medical-700">ANESA</span>, empowers healthcare professionals with precise, data-driven insights into patient health—all without invasive procedures.
+        Ninvasa, in partnership with BioPromin, spearheads the development of cutting-edge, non-invasive diagnostic technologies. Our flagship product, <span className="font-semibold text-medical-700">ANESA</span>, empowers healthcare professionals with precise, data-driven insights into patient health—all without invasive procedures.
       </motion.p>
 
       <motion.p 

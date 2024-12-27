@@ -10,7 +10,7 @@ const Partnership = () => {
       className="mt-16"
     >
       <h2 className="text-2xl font-bold text-medical-800 mb-6">
-        BL+ Medica: Authorized Reseller and Strategic Investor
+        Ninvasa: Authorized Reseller and Strategic Investor
       </h2>
       
       <ul className="space-y-4 mb-8">
