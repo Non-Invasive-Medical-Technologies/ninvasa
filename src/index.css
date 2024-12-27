@@ -10,19 +10,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 201 96% 32%;
+    --primary: 142 45% 27%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
+    --secondary: 142 45% 37%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
+    --accent: 142 45% 47%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 201 96% 32%;
+    --ring: 142 45% 27%;
     --radius: 0.75rem;
   }
 }
@@ -38,11 +38,11 @@
 }
 
 .nav-link {
-  @apply relative text-foreground/90 transition-colors hover:text-foreground/60;
+  @apply relative text-foreground/90 transition-colors hover:text-medical-500;
 }
 
 .nav-link::after {
-  @apply absolute -bottom-1 left-0 h-[2px] w-0 bg-medical-600 transition-all duration-300 content-[''];
+  @apply absolute -bottom-1 left-0 h-[2px] w-0 bg-medical-500 transition-all duration-300 content-[''];
 }
 
 .nav-link:hover::after {
