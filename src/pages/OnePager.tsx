@@ -16,13 +16,8 @@ const OnePager = () => {
         <div className="text-center space-y-4">
           <div className="flex justify-center items-center gap-4">
             <img 
-              src="/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png" 
-              alt="BL Medica Logo" 
-              className="h-16" 
-            />
-            <img 
-              src="/lovable-uploads/d1e24c32-9340-4528-8f24-f221be5a95a3.png" 
-              alt="Biopromin Logo" 
+              src="/lovable-uploads/1070924e-f453-4130-a2af-9f61b910e9b9.png" 
+              alt="Ninvasa Logo" 
               className="h-16" 
             />
           </div>
