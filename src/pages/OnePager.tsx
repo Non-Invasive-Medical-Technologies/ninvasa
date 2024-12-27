@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Brain, Target, Users, TrendingUp, Globe, Award } from 'lucide-react';
+import { Brain, Target, Users, TrendingUp, Globe, Award, Heart, Shield } from 'lucide-react';
 
 const OnePager = () => {
   return (
@@ -15,108 +15,106 @@ const OnePager = () => {
         {/* Header Section */}
         <div className="text-center space-y-4">
           <div className="flex justify-center items-center gap-4">
-            <img src="/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png" alt="Company Logo" className="h-16" />
+            <img 
+              src="/lovable-uploads/1a8e3902-3961-4b94-ac4d-30ae486e8d1d.png" 
+              alt="BL Medica Logo" 
+              className="h-16" 
+            />
+            <img 
+              src="/lovable-uploads/d1e24c32-9340-4528-8f24-f221be5a95a3.png" 
+              alt="Biopromin Logo" 
+              className="h-16" 
+            />
           </div>
           <h1 className="text-3xl font-bold text-medical-800">
-            PEOPLE-CENTRIC MEDICAL SCHEDULING SOLUTIONS
+            Pioneering Non-Invasive Medical Diagnostics
           </h1>
           <p className="text-xl text-medical-600">
-            for Oncology Treatments Worldwide
+            Advanced Healthcare Solutions for the Middle East
           </p>
         </div>
 
         {/* What We Do Section */}
         <Card>
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">What We Do</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>We resolve resource-intensive, multi-stage and, multi-appointment healthcare processes</li>
-              <li>We develop decision-making tools for efficient management of healthcare processes</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Problem We Solve */}
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">The Problem We Solve</h2>
-            <div className="space-y-4">
-              <div className="flex flex-wrap gap-4">
-                {['REGISTRY', 'IMAGING', 'CONTOURING', 'PLANNING', 'DELIVERY'].map((step, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="bg-medical-100 text-medical-800 px-4 py-2 rounded">
-                      {step}
-                    </div>
-                    {index < 4 && <div className="text-medical-500 mx-2">→</div>}
-                  </div>
-                ))}
+            <h2 className="text-xl font-bold mb-4">Our Technology Platforms</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Brain className="w-5 h-5 text-medical-600" />
+                  <h3 className="font-semibold">ANESA Platform</h3>
+                </div>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>136+ health parameters analysis</li>
+                  <li>6-12 minute screening time</li>
+                  <li>Non-invasive diagnostics</li>
+                </ul>
               </div>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Oncology Radiotherapy Planning involves complex constraints and requirements</li>
-                <li>Assignment, Scheduling, and Programming is challenging and very inefficient manually</li>
-                <li>Very time-consuming tasks and difficult to find good solutions manually</li>
-                <li>Currently impossible to handle the tactical side (i.e. how to design the OR Unit)</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Our Solution */}
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">Our Solution (RODAS)</h2>
-            <p className="mb-4">
-              Allocating, scheduling, and programming resources to patients throughout an OR Unit using
-              Machine Learning (ML) and Artificial Intelligence (AI) decision-making algorithms,
-              provided as SaaS (Software-as-a-Service) business model.
-            </p>
-            <div className="grid grid-cols-3 gap-4 mt-4">
-              <div className="text-center p-4 bg-medical-50 rounded">
-                <p className="font-semibold">People-centric solutions</p>
-              </div>
-              <div className="text-center p-4 bg-medical-50 rounded">
-                <p className="font-semibold">Holistic Process Approach</p>
-              </div>
-              <div className="text-center p-4 bg-medical-50 rounded">
-                <p className="font-semibold">Role customization</p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-medical-600" />
+                  <h3 className="font-semibold">KOLIBRI Platform</h3>
+                </div>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>40+ health parameters</li>
+                  <li>2-5 minute analysis</li>
+                  <li>Remote monitoring capabilities</li>
+                </ul>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Market Size */}
+        {/* Market Opportunity */}
         <Card>
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">Market Size</h2>
-            <div className="space-y-4">
-              <p>
-                <span className="font-bold">$600M</span> globally in 2026, estimated to grow
-                <span className="font-bold"> 9-13% CAGR</span> next years excluding AI impact.
-              </p>
-              <p>
-                We estimate adding AI will grow this market at
-                <span className="font-bold"> 25-30% CAGR</span>.
-              </p>
-              <p>
-                <span className="font-bold">SOM:</span> Initial target, 17 countries with 1,164 hospitals
-                and 3,178 LINACs (Linear Accelerators).
-              </p>
+            <h2 className="text-xl font-bold mb-4">Market Opportunity</h2>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <h3 className="font-semibold mb-2">Target Markets</h3>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>UAE (2024-2025)</li>
+                  <li>Saudi Arabia & Qatar (2025-2026)</li>
+                  <li>Kuwait & Jordan (2026-2027)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">Market Size</h3>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>Total TAM: $50B+</li>
+                  <li>CAGR: 25.2%</li>
+                  <li>Healthcare Facilities: 30K+</li>
+                </ul>
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Current Status */}
+        {/* Core Team */}
         <Card>
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">Current Status</h2>
-            <div className="space-y-4">
-              <p>
-                <span className="font-bold">MVP fully developed</span> – currently validated in 2 hospitals
-              </p>
-              <p>
-                Pilot agreements signed in 3 hospitals and negotiations in 8 more.
-                <span className="font-bold"> Demand Globally Validated</span>
-              </p>
+            <h2 className="text-xl font-bold mb-4">Leadership Team</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-medical-600" />
+                  <h3 className="font-semibold">Scientific Leadership</h3>
+                </div>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>Dr. Anatolii Pulavskyi - Scientific Research</li>
+                  <li>Dr. Stanislav Kryvenko - Chief Scientific Officer</li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-medical-600" />
+                  <h3 className="font-semibold">Medical & Technical</h3>
+                </div>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>Dr. Liudmyla Kryvenko - Chief Medical Officer</li>
+                  <li>Dr. Sergii Kryvenko - CTO</li>
+                </ul>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -124,33 +122,53 @@ const OnePager = () => {
         {/* Investment Opportunity */}
         <Card>
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4">Investment Opportunity</h2>
-            <div className="space-y-4">
-              <p>Currently raising <span className="font-bold">400,000 € at 2.5 mill. € pre-money valuation</span></p>
-              <p><span className="font-bold">264,000 €</span> already raised</p>
-              <p>Additional <span className="font-bold">180,000 € from ENISA</span> (Spanish R&D soft loans) secured in Nov 2024</p>
+            <h2 className="text-xl font-bold mb-4">Investment Highlights</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="p-4 bg-medical-50 rounded-lg text-center">
+                <Shield className="w-6 h-6 text-medical-600 mx-auto mb-2" />
+                <div className="text-lg font-bold">5+</div>
+                <div className="text-sm">Patents Filed</div>
+              </div>
+              <div className="p-4 bg-medical-50 rounded-lg text-center">
+                <Target className="w-6 h-6 text-medical-600 mx-auto mb-2" />
+                <div className="text-lg font-bold">30K+</div>
+                <div className="text-sm">Target Facilities</div>
+              </div>
+              <div className="p-4 bg-medical-50 rounded-lg text-center">
+                <Globe className="w-6 h-6 text-medical-600 mx-auto mb-2" />
+                <div className="text-lg font-bold">7+</div>
+                <div className="text-sm">Target Markets</div>
+              </div>
+              <div className="p-4 bg-medical-50 rounded-lg text-center">
+                <TrendingUp className="w-6 h-6 text-medical-600 mx-auto mb-2" />
+                <div className="text-lg font-bold">995%</div>
+                <div className="text-sm">ROI Target</div>
+              </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-medical-50 rounded-lg">
+              <h3 className="font-semibold mb-2">Investment Terms</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div>
+                  <div className="text-medical-600">Equity Range</div>
+                  <div className="font-semibold">15-20%</div>
+                </div>
+                <div>
+                  <div className="text-medical-600">Target Raise</div>
+                  <div className="font-semibold">$500,000</div>
+                </div>
+                <div>
+                  <div className="text-medical-600">Valuation</div>
+                  <div className="font-semibold">$2.5M</div>
+                </div>
+                <div>
+                  <div className="text-medical-600">Use of Funds</div>
+                  <div className="font-semibold">Market Entry</div>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
-
-        {/* Key Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="bg-medical-50 p-4 rounded-lg">
-            <TrendingUp className="h-8 w-8 text-medical-600 mb-2" />
-            <div className="text-2xl font-bold text-medical-600">25-30%</div>
-            <div className="text-sm text-gray-600">Expected CAGR</div>
-          </div>
-          <div className="bg-medical-50 p-4 rounded-lg">
-            <Users className="h-8 w-8 text-medical-600 mb-2" />
-            <div className="text-2xl font-bold text-medical-600">1,164+</div>
-            <div className="text-sm text-gray-600">Target Hospitals</div>
-          </div>
-          <div className="bg-medical-50 p-4 rounded-lg">
-            <Globe className="h-8 w-8 text-medical-600 mb-2" />
-            <div className="text-2xl font-bold text-medical-600">17</div>
-            <div className="text-sm text-gray-600">Target Countries</div>
-          </div>
-        </div>
       </motion.div>
     </div>
   );
