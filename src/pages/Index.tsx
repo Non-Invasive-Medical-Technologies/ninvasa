@@ -1,6 +1,5 @@
 import IntroComponent from "@/components/business/IntroComponent";
 import PatentTechnologySection from "@/components/business/PatentTechnologySection";
-import SWOTAnalysis from "@/components/business/SWOTAnalysis";
 
 const Index = () => {
   return (
@@ -9,7 +8,6 @@ const Index = () => {
         <div className="space-y-12">
           <IntroComponent />
           <PatentTechnologySection />
-          <SWOTAnalysis />
         </div>
       </div>
     </div>

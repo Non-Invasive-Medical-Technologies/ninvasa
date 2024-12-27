@@ -5,6 +5,7 @@ import BusinessModelSection from '@/components/business/BusinessModelSection';
 import PatentTechnologySection from '@/components/business/PatentTechnologySection';
 import StrategicPartnership from '@/components/business/StrategicPartnership';
 import AnimatedMarketHeatmap from '@/components/business/AnimatedMarketHeatmap';
+import SWOTAnalysis from '@/components/business/SWOTAnalysis';
 import { Card, CardContent } from '@/components/ui/card';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
@@ -160,5 +161,11 @@ export const slides = [
         </Card>
       </div>
     ),
+  },
+  {
+    id: 7,
+    section: "Strategic Analysis",
+    title: "Strategic SWOT Analysis",
+    component: <SWOTAnalysis />
   },
 ];
