@@ -69,11 +69,6 @@ const HeroSection = () => {
                 willChange: 'transform'
               }}
             >
-              <img 
-                src="/lovable-uploads/ec9a76d9-da41-48e9-9877-dcae1fc65603.png"
-                alt="Kolibri Device"
-                className="w-auto h-[600px] object-contain filter drop-shadow-2xl"
-              />
               {/* Status LED */}
               <div 
                 className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#4EC989] animate-pulse"
