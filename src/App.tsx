@@ -16,6 +16,8 @@ import BioPromin from "./components/about/BioPromin";
 import Slideshow from "./pages/Slideshow";
 import Competition from "./pages/Competition";
 import OnePager from "./pages/OnePager";
+import AnesaOnePager from "./pages/AnesaOnePager";
+import KolibriOnePager from "./pages/KolibriOnePager";
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
         <Route path="about/biopromin" element={<BioPromin />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="anesa" element={<Anesa />} />
+        <Route path="anesa/one-pager" element={<AnesaOnePager />} />
         <Route path="kolibri" element={<Kolibri />} />
+        <Route path="kolibri/one-pager" element={<KolibriOnePager />} />
         <Route path="technology" element={<Technology />} />
         <Route path="technology/roadmap" element={<Roadmap />} />
         <Route path="parameters" element={<Parameters />} />

@@ -54,12 +54,20 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <Link
-                  to="/anesa"
-                  className="inline-flex items-center mt-4 px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
-                >
-                  Explore ANESA Platform <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                <div className="flex items-center gap-4">
+                  <Link
+                    to="/anesa"
+                    className="inline-flex items-center px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+                  >
+                    Explore ANESA Platform <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                  <Link
+                    to="/anesa/one-pager"
+                    className="inline-flex items-center px-6 py-3 border border-medical-600 text-medical-600 rounded-lg hover:bg-medical-50 transition-colors"
+                  >
+                    View One-Pager <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -100,12 +108,20 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <Link
-                  to="/kolibri"
-                  className="inline-flex items-center mt-4 px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
-                >
-                  Discover KOLIBRI System <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                <div className="flex items-center gap-4">
+                  <Link
+                    to="/kolibri"
+                    className="inline-flex items-center px-6 py-3 bg-medical-600 text-white rounded-lg hover:bg-medical-700 transition-colors"
+                  >
+                    Discover KOLIBRI System <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                  <Link
+                    to="/kolibri/one-pager"
+                    className="inline-flex items-center px-6 py-3 border border-medical-600 text-medical-600 rounded-lg hover:bg-medical-50 transition-colors"
+                  >
+                    View One-Pager <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </div>
               </div>
             </CardContent>
           </Card>
