@@ -2,20 +2,19 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import Technology from "./pages/Technology";
+import Business from "./pages/Business";
+import Investment from "./pages/Investment";
+import Competition from "./pages/Competition";
+import Team from "./pages/Team";
 import Portfolio from "./pages/Portfolio";
 import Anesa from "./pages/Anesa";
 import Kolibri from "./pages/Kolibri";
-import Technology from "./pages/Technology";
-import Roadmap from "./pages/Roadmap";
 import Parameters from "./pages/Parameters";
-import Business from "./pages/Business";
-import Investment from "./pages/Investment";
 import Strategy from "./pages/Strategy";
+import Roadmap from "./pages/Roadmap";
 import Download from "./pages/Download";
-import BioPromin from "./components/about/BioPromin";
 import Slideshow from "./pages/Slideshow";
-import Competition from "./pages/Competition";
-import OnePager from "./pages/OnePager";
 import AnesaOnePager from "./pages/AnesaOnePager";
 import KolibriOnePager from "./pages/KolibriOnePager";
 
@@ -25,22 +24,21 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Index />} />
         <Route path="about" element={<About />} />
-        <Route path="about/biopromin" element={<BioPromin />} />
+        <Route path="technology" element={<Technology />} />
+        <Route path="business" element={<Business />} />
+        <Route path="investment" element={<Investment />} />
+        <Route path="competition" element={<Competition />} />
+        <Route path="team" element={<Team />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="anesa" element={<Anesa />} />
-        <Route path="anesa/one-pager" element={<AnesaOnePager />} />
+        <Route path="anesa/onepager" element={<AnesaOnePager />} />
         <Route path="kolibri" element={<Kolibri />} />
-        <Route path="kolibri/one-pager" element={<KolibriOnePager />} />
-        <Route path="technology" element={<Technology />} />
-        <Route path="technology/roadmap" element={<Roadmap />} />
+        <Route path="kolibri/onepager" element={<KolibriOnePager />} />
         <Route path="parameters" element={<Parameters />} />
-        <Route path="business" element={<Business />} />
-        <Route path="business/onepager" element={<OnePager />} />
-        <Route path="investment" element={<Investment />} />
-        <Route path="business/investment-slideshow" element={<Slideshow />} />
         <Route path="strategy" element={<Strategy />} />
-        <Route path="competition" element={<Competition />} />
+        <Route path="roadmap" element={<Roadmap />} />
         <Route path="download" element={<Download />} />
+        <Route path="slideshow" element={<Slideshow />} />
       </Route>
     </Routes>
   );
