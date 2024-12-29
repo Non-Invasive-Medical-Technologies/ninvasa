@@ -11,36 +11,51 @@ const AnesaOnePager = () => {
         transition={{ duration: 0.5 }}
         className="max-w-5xl mx-auto space-y-12"
       >
-        {/* Header Section */}
+        {/* Header Section with Product Image */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-teal-600">ANESA</h1>
           <p className="text-xl text-gray-600">Advanced Non-Invasive Express Screening Analyser</p>
+          <div className="flex justify-center mt-8">
+            <img 
+              src="/lovable-uploads/d9d98ee8-ae0b-4ff3-a92e-49166e1466a8.png"
+              alt="ANESA Device Display"
+              className="rounded-lg shadow-xl max-w-2xl w-full"
+            />
+          </div>
         </div>
 
         {/* Overview Section */}
         <div className="bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold text-teal-600 mb-6">Product Overview</h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            The ANESA® Medical Device is designed for noninvasive screening diagnostics, measuring thermodynamic values 
-            on the skin's surface at specific points on the body. This advanced system processes data using USPIH software, 
-            combining patient information with environmental factors for comprehensive health analysis.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="p-6 bg-teal-50 rounded-lg">
-              <Thermometer className="w-8 h-8 text-teal-600 mb-3" />
-              <h3 className="font-semibold mb-2">High Precision</h3>
-              <p className="text-sm text-gray-600">Temperature measurement accuracy of 0.07ºС</p>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <p className="text-gray-700 leading-relaxed">
+                The ANESA® Medical Device is designed for noninvasive screening diagnostics, measuring thermodynamic values 
+                on the skin's surface at specific points on the body. This advanced system processes data using USPIH software, 
+                combining patient information with environmental factors for comprehensive health analysis.
+              </p>
+              <img 
+                src="/lovable-uploads/d9dd0fef-21b6-4411-aec8-c55ea2328998.png"
+                alt="ANESA Sensor System"
+                className="rounded-lg shadow-md w-full"
+              />
             </div>
-            <div className="p-6 bg-teal-50 rounded-lg">
-              <Clock className="w-8 h-8 text-teal-600 mb-3" />
-              <h3 className="font-semibold mb-2">Rapid Analysis</h3>
-              <p className="text-sm text-gray-600">Quick and efficient screening process</p>
-            </div>
-            <div className="p-6 bg-teal-50 rounded-lg">
-              <Shield className="w-8 h-8 text-teal-600 mb-3" />
-              <h3 className="font-semibold mb-2">Non-Invasive</h3>
-              <p className="text-sm text-gray-600">Safe and comfortable diagnostic procedure</p>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="p-6 bg-teal-50 rounded-lg">
+                <Thermometer className="w-8 h-8 text-teal-600 mb-3" />
+                <h3 className="font-semibold mb-2">High Precision</h3>
+                <p className="text-sm text-gray-600">Temperature measurement accuracy of 0.07ºС</p>
+              </div>
+              <div className="p-6 bg-teal-50 rounded-lg">
+                <Clock className="w-8 h-8 text-teal-600 mb-3" />
+                <h3 className="font-semibold mb-2">Rapid Analysis</h3>
+                <p className="text-sm text-gray-600">Quick and efficient screening process</p>
+              </div>
+              <div className="p-6 bg-teal-50 rounded-lg">
+                <Shield className="w-8 h-8 text-teal-600 mb-3" />
+                <h3 className="font-semibold mb-2">Non-Invasive</h3>
+                <p className="text-sm text-gray-600">Safe and comfortable diagnostic procedure</p>
+              </div>
             </div>
           </div>
         </div>
