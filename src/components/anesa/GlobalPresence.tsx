@@ -3,11 +3,16 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { motion } from 'framer-motion';
 
+type Location = {
+  name: string;
+  coordinates: [number, number]; // This explicitly types coordinates as a tuple of two numbers
+};
+
 const GlobalPresence = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
 
-  const locations = [
+  const locations: Location[] = [
     { name: 'UAE', coordinates: [54.3773, 24.4539] },
     { name: 'Saudi Arabia', coordinates: [45.0792, 23.8859] },
     { name: 'Qatar', coordinates: [51.1839, 25.3548] },
