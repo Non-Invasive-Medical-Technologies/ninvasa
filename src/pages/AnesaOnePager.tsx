@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { Activity, Brain, Shield, Heart, Clock, Thermometer, Stethoscope, Hospital, Activity as Pulse } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import { Activity, Brain, Shield, Heart, Clock, Thermometer, Stethoscope, Hospital } from "lucide-react";
+import CertificationLogos from "@/components/anesa/CertificationLogos";
+import GlobalPresence from "@/components/anesa/GlobalPresence";
+import PatentInformation from "@/components/anesa/PatentInformation";
 
 const AnesaOnePager = () => {
   return (
@@ -61,6 +63,15 @@ const AnesaOnePager = () => {
             </div>
           </div>
         </div>
+
+        {/* Certifications Section */}
+        <CertificationLogos />
+
+        {/* Patent Information */}
+        <PatentInformation />
+
+        {/* Global Presence Map */}
+        <GlobalPresence />
 
         {/* Technical Details */}
         <div className="bg-white p-8 rounded-lg shadow-lg">
