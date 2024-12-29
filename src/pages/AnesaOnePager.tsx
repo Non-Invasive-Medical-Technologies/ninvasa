@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Activity, Brain, Shield, Heart, Clock, Thermometer, Stethoscope, Hospital } from "lucide-react";
 import CertificationLogos from "@/components/anesa/CertificationLogos";
-import GlobalPresence from "@/components/anesa/GlobalPresence";
+import StaticGlobalPresence from "@/components/anesa/StaticGlobalPresence";
 import PatentInformation from "@/components/anesa/PatentInformation";
+import AnesaHeader from "@/components/anesa/AnesaHeader";
 
 const AnesaOnePager = () => {
   return (
@@ -13,20 +14,7 @@ const AnesaOnePager = () => {
         transition={{ duration: 0.5 }}
         className="max-w-5xl mx-auto space-y-12"
       >
-        {/* Header Section with Product Image */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-teal-600">ANESA</h1>
-          <p className="text-xl text-gray-600">Advanced Non-Invasive Express Screening Analyser</p>
-          <div className="flex justify-center mt-8">
-            <div className="w-full max-w-md"> {/* Changed to max-w-md for better sizing */}
-              <img 
-                src="/lovable-uploads/d9d98ee8-ae0b-4ff3-a92e-49166e1466a8.png"
-                alt="ANESA Device Display"
-                className="rounded-lg shadow-xl w-full h-auto object-contain mx-auto"
-              />
-            </div>
-          </div>
-        </div>
+        <AnesaHeader />
 
         {/* Overview Section */}
         <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -71,7 +59,7 @@ const AnesaOnePager = () => {
         <PatentInformation />
 
         {/* Global Presence Map */}
-        <GlobalPresence />
+        <StaticGlobalPresence />
 
         {/* Technical Details */}
         <div className="bg-white p-8 rounded-lg shadow-lg">
