@@ -16,11 +16,13 @@ const AnesaOnePager = () => {
           <h1 className="text-4xl font-bold text-teal-600">ANESA</h1>
           <p className="text-xl text-gray-600">Advanced Non-Invasive Express Screening Analyser</p>
           <div className="flex justify-center mt-8">
-            <img 
-              src="/lovable-uploads/d9d98ee8-ae0b-4ff3-a92e-49166e1466a8.png"
-              alt="ANESA Device Display"
-              className="rounded-lg shadow-xl max-w-2xl w-full"
-            />
+            <div className="max-w-xl w-full"> {/* Changed from max-w-2xl to max-w-xl */}
+              <img 
+                src="/lovable-uploads/d9d98ee8-ae0b-4ff3-a92e-49166e1466a8.png"
+                alt="ANESA Device Display"
+                className="rounded-lg shadow-xl w-full h-auto object-contain"
+              />
+            </div>
           </div>
         </div>
 
