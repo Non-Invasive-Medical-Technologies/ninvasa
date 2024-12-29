@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import KolibriPlatform from "@/components/kolibri/KolibriPlatform";
+import KolibriTechnology from "@/components/kolibri/KolibriTechnology";
 
 const Kolibri = () => {
   return (
@@ -11,6 +12,7 @@ const Kolibri = () => {
         className="space-y-8"
       >
         <h1 className="text-4xl font-bold mb-8 text-center">KOLIBRI System</h1>
+        <KolibriTechnology />
         <KolibriPlatform />
       </motion.div>
     </div>
