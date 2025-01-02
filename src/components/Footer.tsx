@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-gray-50 border-t mt-12 sm:mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-block mb-3 sm:mb-4">
               <img 
                 src="/lovable-uploads/1070924e-f453-4130-a2af-9f61b910e9b9.png" 
                 alt="Ninvasa Logo" 
-                className="h-6 sm:h-8 w-auto"
+                className="h-5 sm:h-6 lg:h-8 w-auto"
               />
             </Link>
             <p className="text-xs sm:text-sm text-gray-600">
@@ -19,8 +19,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3 sm:mb-4">Products</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="text-sm font-semibold text-gray-900 mb-2 sm:mb-3">Products</h3>
+            <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link to="/anesa" className="text-xs sm:text-sm text-gray-600 hover:text-medical-600">
                   ANESA
@@ -35,8 +35,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3 sm:mb-4">Company</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="text-sm font-semibold text-gray-900 mb-2 sm:mb-3">Company</h3>
+            <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link to="/about" className="text-xs sm:text-sm text-gray-600 hover:text-medical-600">
                   About Us
@@ -56,8 +56,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3 sm:mb-4">Business</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="text-sm font-semibold text-gray-900 mb-2 sm:mb-3">Business</h3>
+            <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <Link to="/investment" className="text-xs sm:text-sm text-gray-600 hover:text-medical-600">
                   Investment
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-200">
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
           <p className="text-xs sm:text-sm text-gray-600 text-center">
             © {new Date().getFullYear()} Ninvasa. All rights reserved.
           </p>
