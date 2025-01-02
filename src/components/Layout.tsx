@@ -16,7 +16,7 @@ const Layout = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="pt-16 flex-grow"
+          className="pt-16 flex-grow w-full max-w-full overflow-x-hidden"
         >
           <Outlet />
         </motion.main>

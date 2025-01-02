@@ -54,8 +54,9 @@ const Navigation = () => {
               variant="ghost" 
               onClick={() => setIsOpen(!isOpen)} 
               className="md:hidden ml-2"
+              size="sm"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5" />
             </Button>
             <DesktopNav 
               menuGroups={menuGroups} 
