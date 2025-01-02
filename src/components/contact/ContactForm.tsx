@@ -17,6 +17,7 @@ const ContactForm = () => {
     const form = e.currentTarget;
     
     try {
+      // Replace these with your actual EmailJS credentials
       const result = await emailjs.sendForm(
         'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
@@ -44,7 +45,7 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-medical-500 mb-6">Contact Us</h2>
+      <h2 className="text-2xl font-bold text-teal-600 mb-6">Contact Us</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Label htmlFor="name">Name</Label>
@@ -82,7 +83,7 @@ const ContactForm = () => {
         
         <Button
           type="submit"
-          className="w-full bg-medical-500 hover:bg-medical-600"
+          className="w-full bg-teal-600 hover:bg-teal-700"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Sending..." : "Send Message"}
@@ -93,8 +94,8 @@ const ContactForm = () => {
         <p className="text-sm text-gray-600 mb-4">Or schedule a meeting with us</p>
         <Button
           variant="outline"
-          className="w-full border-medical-500 text-medical-500 hover:bg-medical-500 hover:text-white"
-          onClick={() => window.open('YOUR_CALENDLY_LINK', '_blank')}
+          className="w-full border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
+          onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
         >
           Schedule a Demo
         </Button>
