@@ -1,8 +1,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, ArrowRight, Globe, Star } from 'lucide-react';
+import ContactForm from '../contact/ContactForm';
 
 const HeroSection = () => {
+  const [showContactForm, setShowContactForm] = React.useState(false);
+
   return (
     <div className="relative min-h-[80vh] bg-gradient-to-b from-[#F5F9F9] to-[#E0F2F1] overflow-hidden px-4 sm:px-6">
       {/* Background Elements - adjusted for mobile */}
@@ -39,6 +42,7 @@ const HeroSection = () => {
               <Button 
                 size="lg"
                 className="w-full sm:w-auto bg-gradient-to-r from-medical-500 to-medical-600 text-white hover:opacity-90 transition-opacity text-sm sm:text-base py-2 sm:py-3"
+                onClick={() => setShowContactForm(true)}
               >
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -48,6 +52,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="w-full sm:w-auto border-2 border-medical-500 text-medical-500 hover:bg-medical-500 hover:text-white transition-colors text-sm sm:text-base py-2 sm:py-3"
+                onClick={() => setShowContactForm(true)}
               >
                 Book Demo
                 <MessageSquare className="ml-2 h-4 w-4" />
@@ -71,22 +76,26 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Visual Element */}
-          <div className="relative z-10 hidden lg:flex justify-center items-center">
-            <div className="relative w-full max-w-xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-medical-500/10 to-medical-600/10 rounded-3xl transform rotate-3" />
-              <div className="relative bg-white/90 p-4 sm:p-6 lg:p-8 rounded-3xl shadow-xl">
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-medical-500" />
-                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold">Global Health Innovation</h3>
-                </div>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="h-2 bg-medical-100 rounded-full w-3/4" />
-                  <div className="h-2 bg-medical-100 rounded-full w-full" />
-                  <div className="h-2 bg-medical-100 rounded-full w-2/3" />
+          {/* Right Column - Contact Form or Visual Element */}
+          <div className="relative z-10 flex justify-center items-center">
+            {showContactForm ? (
+              <ContactForm />
+            ) : (
+              <div className="relative w-full max-w-xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-medical-500/10 to-medical-600/10 rounded-3xl transform rotate-3" />
+                <div className="relative bg-white/90 p-4 sm:p-6 lg:p-8 rounded-3xl shadow-xl">
+                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <Globe className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-medical-500" />
+                    <h3 className="text-base sm:text-lg lg:text-xl font-semibold">Global Health Innovation</h3>
+                  </div>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="h-2 bg-medical-100 rounded-full w-3/4" />
+                    <div className="h-2 bg-medical-100 rounded-full w-full" />
+                    <div className="h-2 bg-medical-100 rounded-full w-2/3" />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
