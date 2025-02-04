@@ -17,12 +17,11 @@ const ContactForm = () => {
     
     try {
       console.log("Attempting to send email...");
-      // You'll need to replace these with your actual EmailJS credentials
       const result = await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your Service ID
-        'YOUR_TEMPLATE_ID', // Replace with your Template ID
+        'service_Ninvasa',
+        'template_zutncz6',
         form,
-        'YOUR_PUBLIC_KEY' // Replace with your Public Key
+        'WqBY5Lq3hvAyZroeG'
       );
       
       console.log("Email sent successfully:", result);
