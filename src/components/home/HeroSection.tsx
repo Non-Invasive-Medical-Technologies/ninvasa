@@ -52,9 +52,8 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="w-full sm:w-auto border-2 border-medical-500 text-medical-500 hover:bg-medical-500 hover:text-white transition-colors text-sm sm:text-base py-2 sm:py-3"
-                onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
               >
-                Book Demo
+                Learn More
                 <MessageSquare className="ml-2 h-4 w-4" />
               </Button>
             </div>

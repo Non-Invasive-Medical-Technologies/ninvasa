@@ -1,95 +1,79 @@
-import { useState, FormEvent } from 'react';
-import emailjs from '@emailjs/browser';
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from 'sonner';
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const ContactForm = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const form = e.currentTarget;
-
+  const onSubmit = async (data: ContactFormData) => {
     try {
-      console.log("Attempting to send email...");
-      const result = await emailjs.sendForm(
-        'service_Ninvasa',
-        'template_zutncz6',
-        form,
-        'WqBY5Lq3hvAyZroeG'
-      );
-      
-      console.log("Email sent successfully:", result);
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
-      });
-      form.reset();
+      console.log('Form submitted:', data);
+      toast.success('Message sent successfully!');
+      reset();
     } catch (error) {
-      console.error("Failed to send email:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+      console.error('Error sending message:', error);
+      toast.error('Failed to send message. Please try again.');
     }
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-medical-500 focus:ring-medical-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-medical-500 focus:ring-medical-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            rows={4}
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-medical-500 focus:ring-medical-500"
-          />
-        </div>
-
-        <Button 
-          type="submit" 
-          disabled={isSubmitting}
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-6 rounded-lg shadow-lg max-w-md w-full mx-auto">
+      <div>
+        <Input
+          {...register('name', { required: 'Name is required' })}
+          placeholder="Your Name"
           className="w-full"
-        >
-          {isSubmitting ? "Sending..." : "Send Message"}
-        </Button>
-      </form>
-    </div>
+        />
+        {errors.name && (
+          <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+        )}
+      </div>
+
+      <div>
+        <Input
+          {...register('email', {
+            required: 'Email is required',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: 'Invalid email address',
+            },
+          })}
+          type="email"
+          placeholder="Your Email"
+          className="w-full"
+        />
+        {errors.email && (
+          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+        )}
+      </div>
+
+      <div>
+        <Textarea
+          {...register('message', { required: 'Message is required' })}
+          placeholder="Your Message"
+          className="w-full min-h-[100px]"
+        />
+        {errors.message && (
+          <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+        )}
+      </div>
+
+      <Button 
+        type="submit"
+        className="w-full bg-medical-500 hover:bg-medical-600 text-white"
+      >
+        Send Message
+      </Button>
+    </form>
   );
 };
 
