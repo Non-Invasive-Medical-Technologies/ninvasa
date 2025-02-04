@@ -1,20 +1,17 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const ContactForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     const form = e.currentTarget;
-    
+
     try {
       console.log("Attempting to send email...");
       const result = await emailjs.sendForm(
@@ -26,8 +23,8 @@ const ContactForm = () => {
       
       console.log("Email sent successfully:", result);
       toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
       });
       form.reset();
     } catch (error) {
@@ -43,60 +40,55 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-medical-600 mb-6">Contact Us</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="w-full max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <Label htmlFor="user_name">Name</Label>
-          <Input
-            id="user_name"
-            name="user_name"
-            placeholder="Your name"
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
             required
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-medical-500 focus:ring-medical-500"
           />
         </div>
-        
+
         <div>
-          <Label htmlFor="user_email">Email</Label>
-          <Input
-            id="user_email"
-            name="user_email"
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Email
+          </label>
+          <input
             type="email"
-            placeholder="Your email"
+            name="email"
+            id="email"
             required
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-medical-500 focus:ring-medical-500"
           />
         </div>
-        
+
         <div>
-          <Label htmlFor="message">Message</Label>
-          <Textarea
-            id="message"
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            Message
+          </label>
+          <textarea
             name="message"
-            placeholder="Your message"
+            id="message"
+            rows={4}
             required
-            className="min-h-[100px]"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-medical-500 focus:ring-medical-500"
           />
         </div>
-        
-        <Button
-          type="submit"
-          className="w-full bg-medical-600 hover:bg-medical-700"
+
+        <Button 
+          type="submit" 
           disabled={isSubmitting}
+          className="w-full"
         >
           {isSubmitting ? "Sending..." : "Send Message"}
         </Button>
       </form>
-      
-      <div className="mt-8 text-center">
-        <p className="text-sm text-gray-600 mb-4">Or schedule a meeting with us</p>
-        <Button
-          variant="outline"
-          className="w-full border-medical-600 text-medical-600 hover:bg-medical-600 hover:text-white"
-          onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
-        >
-          Schedule a Demo
-        </Button>
-      </div>
     </div>
   );
 };

@@ -17,6 +17,7 @@ import Download from "./pages/Download";
 import Slideshow from "./pages/Slideshow";
 import AnesaOnePager from "./pages/AnesaOnePager";
 import KolibriOnePager from "./pages/KolibriOnePager";
+import InvestmentSlideshow from "./pages/InvestmentSlideshow";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="technology" element={<Technology />} />
         <Route path="business" element={<Business />} />
         <Route path="investment" element={<Investment />} />
+        <Route path="business/investment-slideshow" element={<InvestmentSlideshow />} />
         <Route path="competition" element={<Competition />} />
         <Route path="team" element={<Team />} />
         <Route path="portfolio" element={<Portfolio />} />
