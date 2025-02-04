@@ -8,13 +8,13 @@ const HeroSection = () => {
 
   return (
     <div className="relative min-h-[80vh] bg-gradient-to-b from-[#F5F9F9] to-[#E0F2F1] overflow-hidden px-4 sm:px-6">
-      {/* Background Elements - adjusted for mobile */}
+      {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-72 h-32 sm:h-72 bg-medical-500/20 rounded-full filter blur-3xl opacity-20 animate-pulse" />
         <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-32 sm:w-72 h-32 sm:h-72 bg-medical-600/20 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000" />
       </div>
 
-      {/* Content Container - improved mobile spacing */}
+      {/* Content Container */}
       <div className="container mx-auto pt-16 sm:pt-24 lg:pt-32 pb-8 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
@@ -36,8 +36,8 @@ const HeroSection = () => {
               to deliver unprecedented insights into your health, making professional-grade 
               monitoring more accessible than ever.
             </p>
-
-            {/* Buttons - mobile-optimized spacing and sizing */}
+            
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg"
@@ -52,14 +52,13 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="w-full sm:w-auto border-2 border-medical-500 text-medical-500 hover:bg-medical-500 hover:text-white transition-colors text-sm sm:text-base py-2 sm:py-3"
-                onClick={() => setShowContactForm(true)}
+                onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
               >
                 Book Demo
                 <MessageSquare className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
-            {/* Stats - improved mobile grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-8 pt-6 sm:pt-8">
               <div className="text-center lg:text-left">
                 <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-medical-500">98%</div>

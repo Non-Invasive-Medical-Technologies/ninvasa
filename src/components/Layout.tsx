@@ -16,9 +16,11 @@ const Layout = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="pt-16 flex-grow w-full max-w-full overflow-x-hidden px-4 sm:px-6 lg:px-8"
+          className="flex-grow w-full max-w-full overflow-x-hidden"
         >
-          <Outlet />
+          <div className="pt-16 px-4 sm:px-6 lg:px-8">
+            <Outlet />
+          </div>
         </motion.main>
       </AnimatePresence>
       <Footer />

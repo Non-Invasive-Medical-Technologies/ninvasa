@@ -45,7 +45,7 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-teal-600 mb-6">Contact Us</h2>
+      <h2 className="text-2xl font-bold text-medical-600 mb-6">Contact Us</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Label htmlFor="user_name">Name</Label>
@@ -81,7 +81,7 @@ const ContactForm = () => {
         
         <Button
           type="submit"
-          className="w-full bg-teal-600 hover:bg-teal-700"
+          className="w-full bg-medical-600 hover:bg-medical-700"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Sending..." : "Send Message"}
@@ -92,7 +92,7 @@ const ContactForm = () => {
         <p className="text-sm text-gray-600 mb-4">Or schedule a meeting with us</p>
         <Button
           variant="outline"
-          className="w-full border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
+          className="w-full border-medical-600 text-medical-600 hover:bg-medical-600 hover:text-white"
           onClick={() => window.open('https://calendly.com/your-calendar', '_blank')}
         >
           Schedule a Demo
