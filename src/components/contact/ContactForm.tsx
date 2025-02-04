@@ -9,14 +9,14 @@ import emailjs from '@emailjs/browser';
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     const form = e.currentTarget;
     
     try {
+      console.log("Attempting to send email...");
       // Replace these with your actual EmailJS credentials
       const result = await emailjs.sendForm(
         'YOUR_SERVICE_ID',
@@ -25,17 +25,17 @@ const ContactForm = () => {
         'YOUR_PUBLIC_KEY'
       );
       
-      console.log('Email sent successfully:', result.text);
+      console.log("Email sent successfully:", result);
       toast({
         title: "Success!",
-        description: "Your message has been sent. We'll get back to you soon.",
+        description: "Your message has been sent successfully.",
       });
       form.reset();
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error("Failed to send email:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -48,25 +48,23 @@ const ContactForm = () => {
       <h2 className="text-2xl font-bold text-teal-600 mb-6">Contact Us</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="user_name">Name</Label>
           <Input
-            id="name"
-            name="name"
-            required
-            className="w-full"
+            id="user_name"
+            name="user_name"
             placeholder="Your name"
+            required
           />
         </div>
         
         <div>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="user_email">Email</Label>
           <Input
-            id="email"
-            name="email"
+            id="user_email"
+            name="user_email"
             type="email"
+            placeholder="Your email"
             required
-            className="w-full"
-            placeholder="your@email.com"
           />
         </div>
         
@@ -75,9 +73,9 @@ const ContactForm = () => {
           <Textarea
             id="message"
             name="message"
+            placeholder="Your message"
             required
-            className="w-full min-h-[100px]"
-            placeholder="How can we help you?"
+            className="min-h-[100px]"
           />
         </div>
         
